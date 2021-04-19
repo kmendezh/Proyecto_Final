@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Andika");
+@import url("https://fonts.googleapis.com/css?family=Abel");
 
 .navBox
 {
@@ -15,14 +15,14 @@
 
 .navItem
 {
-    color:black;
+    color:rgb(4, 97, 109);
     font-size: 40px;
     cursor: pointer;
     margin: 40px 20px 20px 20px;
-    font-family: "Andika";
+    font-family: "Abel";
 }
 
 .navItem:hover
 {
-    color:rgb(4, 97, 109);
+    color:rgb(2, 177, 201);
 }

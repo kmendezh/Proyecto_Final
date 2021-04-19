@@ -12,7 +12,7 @@ const cardsArray = [
 		desc: "Visitá nuestro sitio para conocer nuevos lugares de Costa Rica"
 	},
 	{
-		title: "Visitá hoteles y restaurantes cerca de tu sitio de destino",
+		title: "Visitá hoteles y restaurantes",
 		url: "https://www.hotels-costarica.cr/wp-content/uploads/2020/06/Gaia-panoramica.jpg",
 		desc: "Complementa el tour con las múltiples opciones de Restaurantes y Hoteles que hay a tu disposición"
 	},
@@ -28,10 +28,13 @@ export const Home = () => {
 
 	return (
 		<div>
-			<div className="mainContainer">
-				<div className="titleContainer">
-					<Link className="titleText">Costa Rica</Link>
-				</div>
+			<div className="wrapper">
+				<video autoPlay loop muted>
+					<source
+						src="https://player.vimeo.com/external/291648067.sd.mp4?s=7f9ee1f8ec1e5376027e4a6d1d05d5738b2fbb29&profile_id=164&oauth2_token_id=57447761"
+						type="video/mp4"></source>
+				</video>
+				<h1>Costa Rica</h1>
 			</div>
 			<div className="resenaBox">
 				<h1 className="resenaTitle">Reseña</h1>

@@ -1,44 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Abel");
 
-.mainContainer
-{
-    width: 100%;
-    height: 900px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F07%2Fwaterfall-RIOCELESTE0717.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: auto;
-    margin-bottom: 20px;
-}
-
-.titleContainer
-{
-    margin: auto;
-}
-
-.titleText
-{
-    color:white;
-    font-size: 130px;
-    font-family: "Abel";
-    animation-name: titleFadeIn;
-    animation-duration: 6s;
-    text-decoration: none;
-}
-
-.titleText:hover
-{
-    color: white;
-}
-
-@keyframes titleFadeIn {
-  from {color: rgba(255, 255, 255, 0.1);}
-  to {color: rgb(255, 255, 255);}
-}
-
 .resenaTitle
 {
     font-size: 90px;
@@ -70,7 +31,9 @@
 .howItWorks
 {
     margin-top: 30px;
-    height: 400px;
+    height: 700px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(3, 3, 3);
 }
 
 .howItWorksTitleBox
@@ -97,4 +60,33 @@
 .row
 {
     background-color: rgb(48, 105, 99);
+}
+
+.wrapper
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper video
+{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper h1
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: white;
+    mix-blend-mode: screen;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 360px;
 }
