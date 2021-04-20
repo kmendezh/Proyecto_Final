@@ -11,14 +11,16 @@
     border-bottom: 1px solid rgb(3, 3, 3);
     padding-top: 40px;
     margin-bottom: 12px;
+    background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F07%2Fwaterfall-RIOCELESTE0717.jpg");
+    background-size: cover;
 }
 
 .navItem
 {
-    color:rgb(4, 97, 109);
-    font-size: 40px;
+    color:rgb(255, 255, 255);
+    font-size: 20px;
     cursor: pointer;
-    margin: 40px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
     font-family: "Abel";
 }
 

@@ -5,20 +5,21 @@
     font-size: 90px;
     font-family: "Abel";
     margin: auto;
+    color: white;
 }
 
 .resenaBox
 {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 50%;
+    width: 100%;
+    height: 400px;
     flex-wrap: wrap;
     margin: auto;
-    border-bottom: 1px solid rgb(3, 3, 3);
-    border-top: 1px solid rgb(3, 3, 3);
     padding-bottom: 30px;
     padding-top: 30px;
+    background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F07%2Fwaterfall-RIOCELESTE0717.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .resenaText
@@ -26,6 +27,7 @@
     font-size: 25px;
     font-family: "Abel";
     margin: auto;
+    color: white;
 }
 
 .howItWorks
@@ -33,7 +35,6 @@
     margin-top: 30px;
     height: 700px;
     margin-bottom: 30px;
-    border-bottom: 1px solid rgb(3, 3, 3);
 }
 
 .howItWorksTitleBox
@@ -59,7 +60,7 @@
 
 .row
 {
-    background-color: rgb(48, 105, 99);
+    background-color: rgba(0, 81, 105, 0.877);
 }
 
 .wrapper
@@ -88,5 +89,12 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 360px;
+    font-size: 380px;
+    animation-name: textSize;
+    animation-duration: 6s;
+}
+
+@keyframes textSize {
+  from {font-size: 500px;}
+  to {font-size: 380px}
 }

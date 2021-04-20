@@ -3,6 +3,8 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import { CardHowItWorks } from "../component/cardHowItWorks";
+import { Vision } from "../component/vision";
+import { Mision } from "../component/mision";
 
 // Array de objetos con descripcion, url y titulo de cartas
 const cardsArray = [
@@ -42,9 +44,9 @@ export const Home = () => {
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
 					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce.
 				</p>
-				<img
+				{/* <img
 					className="resenaImg"
-					src="https://www.larepublica.net/storage/images/2020/07/08/20200708143152.flor-tropical.jpg"></img>
+					src="https://www.larepublica.net/storage/images/2020/07/08/20200708143152.flor-tropical.jpg"></img> */}
 			</div>
 			<div className="howItWorks">
 				<div className="howItWorksTitleBox">
@@ -54,6 +56,8 @@ export const Home = () => {
 					{displayCards}
 				</div>
 			</div>
+			<Vision />
+			<Mision />
 		</div>
 	);
 };

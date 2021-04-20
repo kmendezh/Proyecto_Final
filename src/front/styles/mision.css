@@ -1,0 +1,19 @@
+.misionBox
+{
+    width: 90%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: auto;
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mision
+{
+    width: 30%;
+    margin-left: -300px;
+}
