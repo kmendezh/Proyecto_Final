@@ -7,7 +7,7 @@ export function Vision() {
 	return (
 		<div className="visionBox">
 			<div className="vision">
-				<h1>Vision</h1>
+				<h1 className="visionHeader">Vision</h1>
 				<p className="visionText">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis ante pulvinar, laoreet leo at,
 					tempor turpis. Vestibulum nisl diam, cursus at fermentum ac, scelerisque vel ipsum. Curabitur ac

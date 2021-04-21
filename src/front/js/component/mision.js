@@ -12,7 +12,7 @@ export function Mision() {
 					src="https://www.guanacastealaaltura.com/media/k2/items/cache/0a7d97071828da65151775fc572477c0_XL.jpg?t=20200524_175218"></img>
 			</div>
 			<div className="mision">
-				<h1>Mision</h1>
+				<h1 className="misionHeader">Mision</h1>
 				<p className="misionText">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis ante pulvinar, laoreet leo at,
 					tempor turpis. Vestibulum nisl diam, cursus at fermentum ac, scelerisque vel ipsum. Curabitur ac

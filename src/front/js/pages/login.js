@@ -82,7 +82,7 @@ export const LoginPage = () => {
 						</button>
 					</div>
 
-					<div className="footer">
+					<div className="footer_login">
 						Do not have an account?
 						<Link to={"/register"}> Sign up</Link>
 					</div>
