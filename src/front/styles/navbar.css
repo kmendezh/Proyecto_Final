@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
+.navBox
+{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    padding-top: 40px;
+    background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F07%2Fwaterfall-RIOCELESTE0717.jpg");
+    background-size: cover;
+}
+
+.navItem
+{
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+    cursor: pointer;
+    margin: 20px 20px 20px 20px;
+    font-family: "Abel";
+}
+
+.navItem:hover
+{
+    color:rgb(2, 177, 201);
+}

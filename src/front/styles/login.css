@@ -1,0 +1,46 @@
+.container
+{
+    margin: auto;
+    width: 25%;
+    justify-content: center;
+    background-color: rgba(228, 228, 228, 0.15);
+    border: 1px solid white;
+    height: 500px;
+    padding-top: 100px;
+    border-radius: 2%;
+    opacity: 0.8;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color:white;
+}
+
+.header
+{
+    margin-bottom: 50px;
+}
+
+.footer
+{
+    margin: auto;
+}
+
+.userInput
+{
+    margin-bottom: 30px;
+}
+
+.loginWindow
+{
+    background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F07%2Fwaterfall-RIOCELESTE0717.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.flexContainer
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+}

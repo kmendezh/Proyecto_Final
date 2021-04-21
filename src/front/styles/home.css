@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
+.resenaTitle
+{
+    font-size: 90px;
+    font-family: "Abel";
+    margin: auto;
+    color: white;
+}
+
+.resenaBox
+{
+    display: flex;
+    width: 100%;
+    height: 400px;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F07%2Fwaterfall-RIOCELESTE0717.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.resenaText
+{
+    font-size: 25px;
+    font-family: "Abel";
+    margin: auto;
+    color: white;
+}
+
+.howItWorks
+{
+    margin-top: 30px;
+    height: 700px;
+    margin-bottom: 30px;
+}
+
+.howItWorksTitleBox
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.howItWorksTitle
+{
+    font-family: "Abel";
+    font-size: 90px;
+    margin: auto;
+}
+
+.resenaImg
+{
+    width: 50%;
+    height:200px;
+}
+
+.row
+{
+    background-color: rgba(0, 81, 105, 0.877);
+}
+
+.wrapper
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper video
+{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper h1
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: white;
+    mix-blend-mode: screen;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 380px;
+    animation-name: textSize;
+    animation-duration: 6s;
+}
+
+@keyframes textSize {
+  from {font-size: 500px;}
+  to {font-size: 380px}
+}
