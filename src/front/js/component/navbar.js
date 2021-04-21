@@ -6,7 +6,7 @@ export const Navbar = () => {
 	return (
 		<div className="navBox">
 			<div>
-				<Link className="navItem">
+				<Link to={"/"} className="navItem">
 					Inicio <i className="fas fa-map-marked" style={{ fontSize: "20px" }}></i>{" "}
 				</Link>
 			</div>
@@ -21,7 +21,7 @@ export const Navbar = () => {
 				</Link>
 			</div>
 			<div>
-				<Link className="navItem">
+				<Link to={"/login"} className="navItem">
 					Perfil <i className="fas fa-user-alt" style={{ fontSize: "20px" }}></i>
 				</Link>
 			</div>
