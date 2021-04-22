@@ -57,7 +57,7 @@ export const LoginPage = () => {
 							className="form-control"
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Email"
+							placeholder="Correo"
 						/>
 					</div>
 
@@ -73,7 +73,7 @@ export const LoginPage = () => {
 							className="form-control"
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Password"
+							placeholder="Contraseña"
 						/>
 					</div>
 					<div style={{ marginBottom: "20px" }}>
@@ -83,8 +83,11 @@ export const LoginPage = () => {
 					</div>
 
 					<div className="footer_login">
-						Do not have an account?
-						<Link to={"/register"}> Sign up</Link>
+						¿No tienes cuenta?
+						<Link to={"/register"} style={{ color: "white", paddingLeft: "2px" }}>
+							{""}
+							Regístrate
+						</Link>
 					</div>
 				</div>
 

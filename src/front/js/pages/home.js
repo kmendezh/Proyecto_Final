@@ -11,17 +11,20 @@ const cardsArray = [
 	{
 		title: "Explorá nuevos lugares",
 		url: "https://p0.pikist.com/photos/379/564/sloth-costa-rica-puerto-viejo-rainforest-travel-nature.jpg",
-		desc: "Visitá nuestro sitio para conocer nuevos lugares de Costa Rica"
+		desc: "Visitá nuestro sitio para conocer nuevos lugares de Costa Rica",
+		link: "/social"
 	},
 	{
 		title: "Visitá hoteles y restaurantes",
 		url: "https://www.hotels-costarica.cr/wp-content/uploads/2020/06/Gaia-panoramica.jpg",
-		desc: "Complementa el tour con las múltiples opciones de Restaurantes y Hoteles que hay a tu disposición"
+		desc: "Complementa el tour con las múltiples opciones de Restaurantes y Hoteles que hay a tu disposición",
+		link: "/hoteles"
 	},
 	{
 		title: "Formá parte de nuestra red social",
 		url: "https://myguanacastevacation.com/wp-content/uploads/2019/04/Stress-and-Anxiety-nature-1024x683.jpg",
-		desc: "Crea un perfil y comparte los tours que has hecho con los demás"
+		desc: "Crea un perfil y comparte los tours que has hecho con los demás",
+		link: "/login"
 	}
 ];
 
