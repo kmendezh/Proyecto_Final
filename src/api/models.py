@@ -16,6 +16,7 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "username": self.username
             # do not serialize the password, its a security breach
         }
 class Post(db.Model):
@@ -43,7 +44,7 @@ class Post(db.Model):
             "url": self.url,
             "total_comment": self.total_comment,
             "total_like": self.total_like,
-            "iduser": self.iduser,
+            "iduser": self.iduser
         }
 class Post_like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -63,7 +64,7 @@ class Post_like(db.Model):
             "created": self.created,
             "updated": self.updated,
             "idpost": self.idpost,
-            "iduser": self.iduser,
+            "iduser": self.iduser
         }
 class Post_comments(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -85,5 +86,5 @@ class Post_comments(db.Model):
             "updated": self.updated,
             "comment": self.comment,
             "idpost": self.idpost,
-            "iduser": self.iduser,
+            "iduser": self.iduser
         }
