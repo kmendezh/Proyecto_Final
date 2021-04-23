@@ -37,7 +37,8 @@ export const Home = () => {
 				<video autoPlay loop muted>
 					<source
 						src="https://player.vimeo.com/external/291648067.sd.mp4?s=7f9ee1f8ec1e5376027e4a6d1d05d5738b2fbb29&profile_id=164&oauth2_token_id=57447761"
-						type="video/mp4"></source>
+						type="video/mp4"
+					/>
 				</video>
 				<h1>Costa Rica</h1>
 			</div>

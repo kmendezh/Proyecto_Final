@@ -9,7 +9,8 @@ export function Mision() {
 			<div className="misionImg">
 				<img
 					style={{ width: "50%", height: "300px" }}
-					src="https://www.guanacastealaaltura.com/media/k2/items/cache/0a7d97071828da65151775fc572477c0_XL.jpg?t=20200524_175218"></img>
+					src="https://www.guanacastealaaltura.com/media/k2/items/cache/0a7d97071828da65151775fc572477c0_XL.jpg?t=20200524_175218"
+				/>
 			</div>
 			<div className="mision">
 				<h1 className="misionHeader">Mision</h1>
