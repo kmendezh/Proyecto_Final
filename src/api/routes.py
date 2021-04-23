@@ -7,7 +7,6 @@ from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
 
-
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
 
@@ -48,4 +47,19 @@ def register():
     db.session.add(newUser)
     db.session.commit()
 
-    return jsonify('OK'), 200
+    return jsonify('Se registro el usuario correctamente'), 200
+
+@api.route('/updatepassword/<int:id>', methods=['POST'])
+def updatepassword(id):
+
+    body = request.get_json()
+
+    user1 = User.query.get(id)
+    if user1 is None:
+        raise APIException('Usuario no existe', status_code=404)
+
+    if "password" in body:
+        user1.password = body["password"]
+    db.session.commit()
+
+    return jsonify('El password se actualizo correctamente'), 200
