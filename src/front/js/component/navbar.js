@@ -16,7 +16,7 @@ export const Navbar = () => {
 				</Link>
 			</div>
 			<div>
-				<Link className="navItem">
+				<Link to={"/hotelesrestaurantes"} className="navItem">
 					Hoteles y Restaurantes <i className="fas fa-hotel" style={{ fontSize: "20px" }}></i>
 				</Link>
 			</div>
