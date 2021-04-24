@@ -58,7 +58,7 @@ def sitemap():
 @app.route('/login', methods=['POST'])
 def create_token():
     email = request.json.get("email", None)
-    password = request.json.get("password", None)
+    password = request.json.get("password", None) 
     
     if email is None:
         return jsonify({"msg": "No email was provided"}), 400
