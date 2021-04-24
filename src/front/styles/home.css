@@ -2,7 +2,7 @@
 
 .resenaTitle
 {
-    font-size: 90px;
+    font-size: 4vw;
     font-family: "Abel";
     margin: auto;
     color: white;
@@ -24,7 +24,7 @@
 
 .resenaText
 {
-    font-size: 25px;
+    font-size: 2vw;
     font-family: "Abel";
     margin: auto;
     color: white;
@@ -48,8 +48,9 @@
 .howItWorksTitle
 {
     font-family: "Abel";
-    font-size: 90px;
+    font-size: 4vw;
     margin: auto;
+    margin-bottom: 0;
 }
 
 .resenaImg
@@ -61,6 +62,8 @@
 .row
 {
     background-color: rgb(0, 112, 84);
+    height: 70%;
+    padding-top: 1%;
 }
 
 .wrapper
@@ -89,12 +92,35 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 380px;
+    font-size: 20vw;
     animation-name: textSize;
     animation-duration: 6s;
 }
 
 @keyframes textSize {
-  from {font-size: 500px;}
-  to {font-size: 380px}
+  from {font-size: 30vw;}
+  to {font-size: 20vw}
+}
+
+@media only screen and (max-width: 815px) {
+  .resenaBox{height: 300px;}
+}
+
+@media only screen and (max-width: 550px) {
+  .resenaBox{height: 200px;}
+}
+
+@media only screen and (max-width: 1096px) {
+  .row{height: 50%;}
+  .howItWorks{height: 600px;}
+}
+
+@media only screen and (max-width: 500px) {
+  .row{height: 40%;}
+  .howItWorks{height: 300px;}
+}
+
+@media only screen and (max-width: 400px) {
+  .howItWorks{height: 200px;}
+  .row{height: 60%;}
 }
