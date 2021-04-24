@@ -12,17 +12,17 @@ export const RegisterPage = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		var myHeaders = new Headers();
+		let myHeaders = new Headers();
 		myHeaders.append("Content-Type", "application/json");
 
-		var raw = JSON.stringify({
+		let raw = JSON.stringify({
 			email: email,
 			password: password,
 			username: userName,
 			is_active: false
 		});
 
-		var requestOptions = {
+		let requestOptions = {
 			method: "POST",
 			headers: myHeaders,
 			body: raw,
