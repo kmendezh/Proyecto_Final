@@ -27,15 +27,19 @@ export const LoginPage = () => {
 			redirect: "follow"
 		};
 
-		let response = await fetch(urlAPILogin, requestOptions);
-		if (response.status != 200) {
-			console.log("Error en Login", response);
-			setErrorWindow(true);
-			setErrorMsg("Correo y/o contraseña inválidos");
-		} else {
-			console.log("Login exitoso");
-			setAuth(true);
-		}
+		await fetch(urlAPILogin, requestOptions)
+			.then(response => response.text())
+			.then(result => {
+				result = JSON.parse(result);
+				if (result.token != undefined) {
+					sessionStorage.setItem("token", result.token);
+					console.log("Token guardado");
+				} else {
+					setErrorWindow(true);
+					setErrorMsg("Correo y/o contraseña inválidos");
+				}
+			})
+			.catch(error => console.log("error", error));
 	};
 
 	const closeWindow = () => {
