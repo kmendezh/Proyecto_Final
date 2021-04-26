@@ -5,13 +5,15 @@
     border-color: #06BFAA;
     margin-bottom: 10px;
     align-content: flex-end;
-    text-align: center
-}
+    text-align: center;
+    font-family: 'Poppins', sans-serif;}
 
 .fotos {
     
     margin-bottom: 10px;
-    justify-content:space-around
+    justify-content:space-around;
+    background-color: white;
+
 }
 .fotos img{
 display: inline-block;
@@ -20,16 +22,6 @@ padding-right: 5px;
 padding-top: 25px;
 }
 
-.fotos col:hover {
-  transform: scale(1.1);
-}
 .miperfil{
       text-align: center
-}
-.personal{
-   background-color: gray;
-}
-
-.card-footer{
-       justify-content: center
 }

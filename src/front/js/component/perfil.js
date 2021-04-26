@@ -6,36 +6,38 @@ import { Link } from "react-router-dom";
 
 export const Perfil = () => {
 	return (
-		<Container cont1 fluid>
+		<Container fluid>
 			<div className="miperfil">
-				<h1>Mi perfil</h1>
+				<h1>
+					Mi perfil <i className="fas fa-user-alt" style={{ fontSize: "40px" }} />
+				</h1>
 			</div>
 			<Row>
 				<Col xs={6} md={4}>
 					<Image
-						src="https://image.freepik.com/vector-gratis/idea-bombilla-hombre_98292-5239.jpg"
+						src="https://miperfil.ucr.ac.cr/static/ucr/img/miperfil/PORTADA-500X500.png"
 						roundedCircle
 						height="400px"
 					/>
 					<h1>
-						<strong> Yeison Diaz</strong>
+						<button type="button" className="btn btn-secondary">
+							Edit profile
+						</button>
 					</h1>
-					<h2>Estudiante de 4Geeks</h2>
-					<h2>Amante de la naturaleza</h2>
+					{/* <h2>Estudiante de 4Geeks</h2>
+					<h2>Amante de la naturaleza</h2> */}
 				</Col>
 				<Col xs={6} md={4} className="d-flex flex-wrap align-content-center">
 					<h1>Informacion personal</h1>
 					<h2>Nombre:Yeison Diaz</h2>
 					<h2>Email:fake@gmail.com</h2>
 					<h2>Publicaciones:9</h2>
-					<h2>edad:27</h2>
-					<h2>amigos:340</h2>
 				</Col>
 				<Col xs={6} md={3} className="d-flex flex-wrap align-content-center">
 					<h1>Acerca de mi</h1>
 					<h2>
-						orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-						the industrys standard dummy text ever since the 1500s, when an unknown printer
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+						the industrys.
 					</h2>
 				</Col>
 			</Row>
@@ -46,7 +48,7 @@ export const Perfil = () => {
 			<div>
 				<Dropdown>
 					<Dropdown.Toggle variant="success" id="dropdown-basic">
-						<FcCameraIdentification />
+						<i className="fas fa-plus" style={{ fontSize: "40px" }} />
 					</Dropdown.Toggle>
 
 					<Dropdown.Menu>
@@ -55,13 +57,20 @@ export const Perfil = () => {
 						</Form>
 					</Dropdown.Menu>
 				</Dropdown>
-				nuevo post
+				<h1>
+					<strong>Nuevo Post</strong>
+				</h1>
 			</div>
+
 			<br></br>
 			<br></br>
 			<br></br>
 			<div className="publicacionestitle">
-				<h1>Tus Publicaciones</h1>
+				<h1>
+					{" "}
+					<i className="fas fa-angle-double-down"></i> Tus Publicaciones{" "}
+					<i className="fas fa-angle-double-down"></i>
+				</h1>
 			</div>
 			<Row className="fotos">
 				<Col md={3} padding-top="80px">
@@ -72,23 +81,6 @@ export const Perfil = () => {
 						width="400px"
 					/>
 				</Col>
-
-				{/* <div className="col mb-5">
-					<div className="card h-100">
-						<img
-							src="https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/100633/2000x2000-0-70-d0baf99fc50080357acf1a94d904a129.jpg"
-							className="card-img-top"
-							alt="..."
-						/>
-						<div className="card-footer text-right">
-							<Link to={""}>
-								<button type="button" className="btn btn-outline-info">
-									ver publicacion!
-								</button>
-							</Link>
-						</div>
-					</div>
-				</div> */}
 				<Col md={3}>
 					{" "}
 					<Image
@@ -98,22 +90,7 @@ export const Perfil = () => {
 						width="400px"
 					/>
 				</Col>
-				{/* <div className="col mb-5">
-					<div className="card h-100">
-						<img
-							src="https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/100633/2000x2000-0-70-d0baf99fc50080357acf1a94d904a129.jpg"
-							className="card-img-top"
-							alt="..."
-						/>
-						<div className="card-footer text-right">
-							<Link to={""}>
-								<button type="button" className="btn btn-outline-info">
-									ver publicacion!
-								</button>
-							</Link>
-						</div>
-					</div>
-				</div> */}
+
 				<Col md={3}>
 					{" "}
 					<Image
@@ -123,22 +100,7 @@ export const Perfil = () => {
 						width="400px"
 					/>
 				</Col>
-				{/* <div className="col mb-5">
-					<div className="card h-100">
-						<img
-							src="https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/100633/2000x2000-0-70-d0baf99fc50080357acf1a94d904a129.jpg"
-							className="card-img-top"
-							alt="..."
-						/>
-						<div className="card-footer text-right">
-							<Link to={""}>
-								<button type="button" className="btn btn-outline-info">
-									ver publicacion!
-								</button>
-							</Link>
-						</div>
-					</div>
-				</div> */}
+
 				<Col md={3}>
 					<Image
 						src="https://puravidaguide.com/wp-content/uploads/2017/02/16602322_1859650827654347_4619721850299879966_o-3.jpg"
@@ -147,22 +109,7 @@ export const Perfil = () => {
 						width="400px"
 					/>
 				</Col>
-				{/* <div className="col mb-3">
-					<div className="card h-100">
-						<img
-							src="https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/100633/2000x2000-0-70-d0baf99fc50080357acf1a94d904a129.jpg"
-							className="card-img-top"
-							alt="..."
-						/>
-						<div className="card-footer text-right">
-							<Link to={""}>
-								<button type="button" className="btn btn-outline-info">
-									ver publicacion!
-								</button>
-							</Link>
-						</div>
-					</div>
-				</div> */}
+
 				<Col md={3}>
 					<Image
 						src="https://lh3.googleusercontent.com/-plANZqem4RE/VqnF2uwR4BI/AAAAAAABLKA/6jNRoYvAP4o/rio-celeste-3%25255B6%25255D.jpg?imgmax=800"
@@ -171,22 +118,7 @@ export const Perfil = () => {
 						width="400px"
 					/>
 				</Col>
-				{/* <div className="col mb-3">
-					<div className="card h-100">
-						<img
-							src="https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/100633/2000x2000-0-70-d0baf99fc50080357acf1a94d904a129.jpg"
-							className="card-img-top"
-							alt="..."
-						/>
-						<div className="card-footer text-right">
-							<Link to={""}>
-								<button type="button" className="btn btn-outline-info">
-									ver publicacion!
-								</button>
-							</Link>
-						</div>
-					</div>
-				</div> */}
+
 				<Col md={3}>
 					{" "}
 					<Image
@@ -196,22 +128,7 @@ export const Perfil = () => {
 						width="400px"
 					/>
 				</Col>
-				{/* <div className="col mb-3">
-					<div className="card h-100">
-						<img
-							src="https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/100633/2000x2000-0-70-d0baf99fc50080357acf1a94d904a129.jpg"
-							className="card-img-top"
-							alt="..."
-						/>
-						<div className="card-footer text-right">
-							<Link to={""}>
-								<button type="button" className="btn btn-outline-info">
-									ver publicacion!
-								</button>
-							</Link>
-						</div>
-					</div>
-				</div> */}
+
 				<Col md={3}>
 					{" "}
 					<Image
@@ -221,22 +138,7 @@ export const Perfil = () => {
 						width="400px"
 					/>
 				</Col>
-				{/* <div className="col mb-3">
-					<div className="card h-100">
-						<img
-							src="https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/100633/2000x2000-0-70-d0baf99fc50080357acf1a94d904a129.jpg"
-							className="card-img-top"
-							alt="..."
-						/>
-						<div className="card-footer text-right">
-							<Link to={""}>
-								<button type="button" className="btn btn-outline-info">
-									ver publicacion!
-								</button>
-							</Link>
-						</div>
-					</div>
-				</div> */}
+
 				<Col md={3}>
 					<Image
 						src="https://conozcasucanton.com/wp-content/uploads/sites/11/2017/07/Poza-Cajon-Puriscal.jpg"
@@ -246,23 +148,6 @@ export const Perfil = () => {
 					/>
 				</Col>
 			</Row>
-
-			{/* <div className="col mb-3">
-				<div className="card h-100">
-					<img
-						src="https://conozcasucanton.com/wp-content/uploads/sites/11/2017/07/Poza-Cajon-Puriscal.jpg"
-						className="card-img-top"
-						alt="..."
-					/>
-					<div className="card-footer text-right">
-						<Link to={""}>
-							<button type="button" className="btn btn-outline-info">
-								ver publicacion!
-							</button>
-						</Link>
-					</div>
-				</div>
-			</div> */}
 		</Container>
 	);
 };
