@@ -11,7 +11,7 @@ export const Navbar = () => {
 				</Link>
 			</div>
 			<div>
-				<Link className="navItem">
+				<Link to={"/social"} className="navItem">
 					Social <i className="fas fa-images" style={{ fontSize: "20px" }}></i>
 				</Link>
 			</div>
