@@ -71,7 +71,7 @@ export const SocialHome = () => {
 							state="Limón"
 							height="350px"
 							width="300px"
-							url="https://lh3.googleusercontent.com/proxy/iIBYeHfZNaSB3o_b4e1DF7b---zXNCg9khvAH6TGJmBLUoGxk-bUqU8GSPxPtrdjKg3Qp0xzgh8XT28hLfociaBDkXhoIDAeESdZ1iF7aHWw0-DQ"
+							url="https://www.govisitcostarica.co.cr/images/photos/full-palms-cahuita-caribbean-costa-rica.jpg"
 							weather={store.statesTemp[6].weather}
 							tmpMin={store.statesTemp[6].tempMin}
 							tmpMax={store.statesTemp[6].tempMax}
