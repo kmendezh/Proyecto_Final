@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPILogin = "https://3001-fuchsia-guan-ei0d85u3.ws-us03.gitpod.io/api/login";
+const urlAPI = "https://3001-fuchsia-guan-ei0d85u3.ws-us03.gitpod.io/api/register";
 
-export const LoginPage = () => {
+export const RegisterPage = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
 
@@ -17,7 +17,9 @@ export const LoginPage = () => {
 
 		let raw = JSON.stringify({
 			email: email,
-			password: password
+			password: password,
+			username: userName,
+			is_active: false
 		});
 
 		let requestOptions = {
@@ -27,39 +29,40 @@ export const LoginPage = () => {
 			redirect: "follow"
 		};
 
-		await fetch(urlAPILogin, requestOptions)
-			.then(response => response.text())
-			.then(result => {
-				result = JSON.parse(result);
-				if (result.token != undefined) {
-					sessionStorage.setItem("token", result.token);
-					console.log("Token guardado");
-				} else {
-					setErrorWindow(true);
-					setErrorMsg("Correo y/o contraseña inválidos");
-				}
-			})
-			.catch(error => console.log("error", error));
+		let response = await fetch(urlAPI, requestOptions);
+		if (response.status != 200) {
+			console.log("No Registrado", response);
+			setErrorWindow(true);
+			if (response.status == 409) {
+				setErrorMsg("El correo ya se encuentra registrado");
+			} else if (response.status == 410) {
+				setErrorMsg("El nombre de usuario ya se encuentra registrado");
+			}
+		} else {
+			console.log("Registrado");
+			setAuth(true);
+		}
 	};
 
 	const closeWindow = () => {
-		setErrorWindow(false);
 		setErrorMsg("");
+		setErrorWindow(false);
 	};
 
 	// Variables to handle email, password
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [authentication, setAuth] = useState(false);
-	const [errorMsg, setErrorMsg] = useState("");
+	const [userName, setUserName] = useState("");
 	const [errorWindow, setErrorWindow] = useState(false);
+	const [errorMsg, setErrorMsg] = useState("");
 
 	return (
 		<div className="loginWindow">
 			<form onSubmit={handleSubmit}>
 				{errorWindow ? (
 					<div
-						className="alert alert-danger alert-dismissible fade show"
+						className="alert alert-danger alert-dismissible fade show mt-1"
 						role="alert"
 						style={{ width: "50%", margin: "auto" }}>
 						{errorMsg}
@@ -73,8 +76,8 @@ export const LoginPage = () => {
 						</button>
 					</div>
 				) : null}
-				<div className="container">
-					<h1 className="header"> Login</h1>
+				<div className="containerRegister">
+					<h1 className="header"> Regístrate </h1>
 
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
@@ -99,6 +102,22 @@ export const LoginPage = () => {
 							</span>
 						</div>
 						<input
+							onChange={e => setUserName(e.target.value)}
+							type="text"
+							className="form-control"
+							aria-label="Large"
+							aria-describedby="inputGroup-sizing-sm"
+							placeholder="Nombre de usuario"
+						/>
+					</div>
+
+					<div className="input-group input-group-lg userInput">
+						<div className="input-group-prepend">
+							<span className="input-group-text" id="inputGroup-sizing-lg">
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
+							</span>
+						</div>
+						<input
 							onChange={e => setPassword(e.target.value)}
 							type="password"
 							className="form-control"
@@ -109,20 +128,20 @@ export const LoginPage = () => {
 					</div>
 					<div style={{ marginBottom: "20px" }}>
 						<button type="submit" className="btn btn-light">
-							Login
+							Registrarse
 						</button>
 					</div>
 
 					<div className="footer_login">
-						¿No tienes cuenta?
-						<Link to={"/register"} style={{ color: "white", paddingLeft: "2px" }}>
+						¿Ya tienes cuenta?
+						<Link to={"/login"} style={{ color: "white", paddingLeft: "2px" }}>
 							{""}
-							Regístrate
+							Inicia sesión
 						</Link>
 					</div>
 				</div>
 
-				{authentication ? <Redirect to="/perfil" /> : null}
+				{authentication ? <Redirect to="/login" /> : null}
 			</form>
 		</div>
 	);
