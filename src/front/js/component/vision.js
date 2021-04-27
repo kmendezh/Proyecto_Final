@@ -20,7 +20,8 @@ export function Vision() {
 			<div className="visionImg">
 				<img
 					style={{ width: "50%", height: "300px" }}
-					src="https://axrjaco.com/wp-content/uploads/2019/03/animal-aquatic-marine-life-1618606.jpg"></img>
+					src="https://axrjaco.com/wp-content/uploads/2019/03/animal-aquatic-marine-life-1618606.jpg"
+				/>
 			</div>
 		</div>
 	);

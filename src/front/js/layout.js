@@ -10,6 +10,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { LoginPage } from "./pages/login";
+import { Perfil } from "./component/perfil";
 import { RegisterPage } from "./pages/register";
 import { Hoteles } from "./pages/hotelesrestaurantes";
 import { SocialPage } from "./pages/social";
@@ -43,6 +44,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
+						</Route>
+						<Route exact path="/perfil">
+							<Perfil />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />

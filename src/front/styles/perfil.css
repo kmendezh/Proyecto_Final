@@ -1,0 +1,27 @@
+.publicacionestitle {
+    border-width: 5px;
+    border-bottom-style: double;
+    border-top-style: double;
+    border-color: #06BFAA;
+    margin-bottom: 10px;
+    align-content: flex-end;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;}
+
+.fotos {
+    
+    margin-bottom: 10px;
+    justify-content:space-around;
+    background-color: white;
+
+}
+.fotos img{
+display: inline-block;
+padding-bottom: 25px;
+padding-right: 5px;
+padding-top: 25px;
+}
+
+.miperfil{
+      text-align: center
+}
