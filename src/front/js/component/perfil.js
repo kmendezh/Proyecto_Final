@@ -42,9 +42,9 @@ export const Perfil = () => {
 				</Col>
 			</Row>
 
-			<br></br>
-			<br></br>
-			<br></br>
+			<br />
+			<br />
+			<br />
 			<div>
 				<Dropdown>
 					<Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -62,14 +62,14 @@ export const Perfil = () => {
 				</h1>
 			</div>
 
-			<br></br>
-			<br></br>
-			<br></br>
+			<br />
+			<br />
+			<br />
 			<div className="publicacionestitle">
 				<h1>
 					{" "}
-					<i className="fas fa-angle-double-down"></i> Tus Publicaciones{" "}
-					<i className="fas fa-angle-double-down"></i>
+					<i className="fas fa-angle-double-down" /> Tus Publicaciones{" "}
+					<i className="fas fa-angle-double-down" />
 				</h1>
 			</div>
 			<Row className="fotos">
