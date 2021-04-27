@@ -26,6 +26,7 @@ class Post(db.Model):
     title = db.Column(db.String(300), nullable=False)
     comment = db.Column(db.String(300), nullable=False)
     url = db.Column(db.String(300), nullable=False)
+    provincia = db.Column(db.String(30), nullable=False)
     total_comment = db.Column(db.Integer, nullable=False)
     total_like = db.Column(db.Integer, nullable=False)
     iduser = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -42,6 +43,7 @@ class Post(db.Model):
             "title": self.title,
             "comment": self.comment,
             "url": self.url,
+            "provincia": self.provincia,
             "total_comment": self.total_comment,
             "total_like": self.total_like,
             "iduser": self.iduser
