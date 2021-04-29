@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPILogin = "https://3001-fuchsia-guan-ei0d85u3.ws-us03.gitpod.io/api/login";
+const urlAPILogin = "https://3001-azure-cougar-47rfuuyp.ws-us03.gitpod.io/api/login";
 
 export const LoginPage = () => {
 	// Get Store
@@ -34,6 +34,7 @@ export const LoginPage = () => {
 				if (result.token != undefined) {
 					sessionStorage.setItem("token", result.token);
 					console.log("Token guardado");
+					setAuth(true);
 				} else {
 					setErrorWindow(true);
 					setErrorMsg("Correo y/o contraseña inválidos");

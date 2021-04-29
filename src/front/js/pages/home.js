@@ -18,7 +18,7 @@ const cardsArray = [
 		title: "Visitá hoteles y restaurantes",
 		url: "https://www.hotels-costarica.cr/wp-content/uploads/2020/06/Gaia-panoramica.jpg",
 		desc: "Complementa el tour con las múltiples opciones de Restaurantes y Hoteles que hay a tu disposición",
-		link: "/hoteles"
+		link: "/hotelesrestaurantes"
 	},
 	{
 		title: "Formá parte de nuestra red social",
