@@ -5,7 +5,7 @@ import "../../styles/login.css";
 
 const urlAPILogin = "https://3001-azure-cougar-47rfuuyp.ws-us03.gitpod.io/api/login";
 
-export const LoginPage = () => {
+export const ResetPassword = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
 
@@ -49,8 +49,9 @@ export const LoginPage = () => {
 	};
 
 	// Variables to handle email, password
-	const [email, setEmail] = useState("");
+	// const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [passwordConfirm, setPasswordConfirm] = useState("");
 	const [authentication, setAuth] = useState(false);
 	const [errorMsg, setErrorMsg] = useState("");
 	const [errorWindow, setErrorWindow] = useState(false);
@@ -75,23 +76,7 @@ export const LoginPage = () => {
 					</div>
 				) : null}
 				<div className="container">
-					<h1 className="header"> Login</h1>
-
-					<div className="input-group input-group-lg userInput">
-						<div className="input-group-prepend">
-							<span className="input-group-text" id="inputGroup-sizing-lg">
-								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-address-book" />
-							</span>
-						</div>
-						<input
-							onChange={e => setEmail(e.target.value)}
-							type="text"
-							className="form-control"
-							aria-label="Large"
-							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Correo"
-						/>
-					</div>
+					<h1 className="header">Reset Password</h1>
 
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
@@ -105,26 +90,35 @@ export const LoginPage = () => {
 							className="form-control"
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Contraseña"
+							placeholder="Nueva Contraseña"
+						/>
+					</div>
+					<div className="input-group input-group-lg userInput">
+						<div className="input-group-prepend">
+							<span className="input-group-text" id="inputGroup-sizing-lg">
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
+							</span>
+						</div>
+						<input
+							onChange={e => setPasswordConfirm(e.target.value)}
+							type="password"
+							className="form-control"
+							aria-label="Large"
+							aria-describedby="inputGroup-sizing-sm"
+							placeholder="Confirmar Contraseña"
 						/>
 					</div>
 					<div style={{ marginBottom: "20px" }}>
 						<button type="submit" className="btn btn-light">
-							Login
+							Submit
 						</button>
 					</div>
 
 					<div className="footer_login">
-						¿No tienes cuenta?
-						<Link to={"/register"} style={{ color: "white", paddingLeft: "2px" }}>
+						¿Ya tienes cuenta?
+						<Link to={"/login"} style={{ color: "white", paddingLeft: "2px" }}>
 							{""}
-							Regístrate
-						</Link>
-						<br />
-						¿Olvido su contraseña?
-						<Link to={"/forgotpassword"} style={{ color: "white", paddingLeft: "2px" }}>
-							{""}
-							Recuperar contraseña
+							Inicia sesión
 						</Link>
 					</div>
 				</div>
