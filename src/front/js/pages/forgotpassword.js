@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
+import { Link, useParams, Redirect } from "react-router-dom";
 
 const urlAPILogin = "https://3001-azure-cougar-47rfuuyp.ws-us03.gitpod.io/api/login";
 
-export const LoginPage = () => {
+export const ForgotPassword = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
 
@@ -16,8 +16,7 @@ export const LoginPage = () => {
 		myHeaders.append("Content-Type", "application/json");
 
 		let raw = JSON.stringify({
-			email: email,
-			password: password
+			email: email
 		});
 
 		let requestOptions = {
@@ -27,20 +26,20 @@ export const LoginPage = () => {
 			redirect: "follow"
 		};
 
-		await fetch(urlAPILogin, requestOptions)
-			.then(response => response.text())
-			.then(result => {
-				result = JSON.parse(result);
-				if (result.token != undefined) {
-					sessionStorage.setItem("token", result.token);
-					console.log("Token guardado");
-					setAuth(true);
-				} else {
-					setErrorWindow(true);
-					setErrorMsg("Correo y/o contraseña inválidos");
-				}
-			})
-			.catch(error => console.log("error", error));
+		// 	await fetch(urlAPILogin, requestOptions)
+		// 		.then(response => response.text())
+		// 		.then(result => {
+		// 			result = JSON.parse(result);
+		// 			if (result.token != undefined) {
+		// 				sessionStorage.setItem("token", result.token);
+		// 				console.log("Token guardado");
+		// 				setAuth(true);
+		// 			} else {
+		// 				setErrorWindow(true);
+		// 				setErrorMsg("Correo y/o contraseña inválidos");
+		// 			}
+		// 		})
+		// 		.catch(error => console.log("error", error));
 	};
 
 	const closeWindow = () => {
@@ -50,7 +49,7 @@ export const LoginPage = () => {
 
 	// Variables to handle email, password
 	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	// const [password, setPassword] = useState("");
 	const [authentication, setAuth] = useState(false);
 	const [errorMsg, setErrorMsg] = useState("");
 	const [errorWindow, setErrorWindow] = useState(false);
@@ -74,8 +73,8 @@ export const LoginPage = () => {
 						</button>
 					</div>
 				) : null}
-				<div className="container">
-					<h1 className="header"> Login</h1>
+				<div className="containerForgot">
+					<h1 className="header"> Forgot Password</h1>
 
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
@@ -92,40 +91,10 @@ export const LoginPage = () => {
 							placeholder="Correo"
 						/>
 					</div>
-
-					<div className="input-group input-group-lg userInput">
-						<div className="input-group-prepend">
-							<span className="input-group-text" id="inputGroup-sizing-lg">
-								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
-							</span>
-						</div>
-						<input
-							onChange={e => setPassword(e.target.value)}
-							type="password"
-							className="form-control"
-							aria-label="Large"
-							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Contraseña"
-						/>
-					</div>
 					<div style={{ marginBottom: "20px" }}>
 						<button type="submit" className="btn btn-light">
-							Login
+							Submit
 						</button>
-					</div>
-
-					<div className="footer_login">
-						¿No tienes cuenta?
-						<Link to={"/register"} style={{ color: "white", paddingLeft: "2px" }}>
-							{""}
-							Regístrate
-						</Link>
-						<br />
-						¿Olvido su contraseña?
-						<Link to={"/forgotpassword"} style={{ color: "white", paddingLeft: "2px" }}>
-							{""}
-							Solicitar nueva contraseña
-						</Link>
 					</div>
 				</div>
 
