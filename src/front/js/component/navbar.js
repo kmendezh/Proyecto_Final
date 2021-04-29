@@ -26,7 +26,7 @@ export const Navbar = () => {
 				</Link>
 			</div>
 			<div>
-				<Link className="navItem">
+				<Link to={"/contact"} className="navItem">
 					Contacto <i className="fas fa-address-card" style={{ fontSize: "20px" }} />
 				</Link>
 			</div>

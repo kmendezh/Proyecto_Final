@@ -16,6 +16,8 @@ import { Hoteles } from "./pages/hotelesrestaurantes";
 import { SocialPage } from "./pages/social";
 import { ForgotPassword } from "./pages/forgotpassword";
 import { ResetPassword } from "./pages/resetpassword";
+import { Contacts } from "./component/Contacts";
+
 
 //create your first component
 const Layout = () => {
@@ -58,6 +60,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
+						</Route>
+						<Route exact path="/contact">
+							<Contacts />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
