@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPI = "https://3001-fuchsia-guan-ei0d85u3.ws-us03.gitpod.io/api/register";
+const urlAPI = "https://3001-azure-cougar-47rfuuyp.ws-us03.gitpod.io/api/register";
 
 export const RegisterPage = () => {
 	// Get Store
