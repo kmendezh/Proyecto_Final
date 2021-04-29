@@ -60,11 +60,10 @@ export function Contacts() {
 			<h1>Encuentranos en nuestras redes sociales</h1>
 			<div className="row">
 				<div className="col md-3">
-                  
-			<a href="https://www.facebook.com/PuraVidaPassport/" target="_blank" rel="noopener noreferrer">
-				<i className="fab fa-facebook-f" />
-			</a>
-                </div>
+					<a href="https://www.facebook.com/PuraVidaPassport/" target="_blank" rel="noopener noreferrer">
+						<i className="fab fa-facebook-f" />
+					</a>
+				</div>
 				<div className="col md-3">icono</div>
 				<div className="col md-3">icono</div>
 				<div className="col md-3">icono</div>
