@@ -23,10 +23,6 @@ export function Contacts() {
 			<div className="contenedor">
 				<h2>Costa Rica</h2>
 			</div>
-			{/* <img
-				style={{ width: "100%", height: "300px" }}
-				src="https://pattyblak.com/wp-content/uploads/2020/01/CostaRicaLogoText.jpg"
-			/> */}
 			<div>
 				<h1 className="cont">Contactenos y con gusto le responderemos</h1>
 			</div>
@@ -63,7 +59,12 @@ export function Contacts() {
 			\<div className="container-fluid"></div>
 			<h1>Encuentranos en nuestras redes sociales</h1>
 			<div className="row">
-				<div className="col md-3">icono</div>
+				<div className="col md-3">
+                  
+			<a href="https://www.facebook.com/PuraVidaPassport/" target="_blank" rel="noopener noreferrer">
+				<i className="fab fa-facebook-f" />
+			</a>
+                </div>
 				<div className="col md-3">icono</div>
 				<div className="col md-3">icono</div>
 				<div className="col md-3">icono</div>
