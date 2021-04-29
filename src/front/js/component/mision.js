@@ -14,14 +14,7 @@ export function Mision() {
 			</div>
 			<div className="mision">
 				<h1 className="misionHeader">Mision</h1>
-				<p className="misionText">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis ante pulvinar, laoreet leo at,
-					tempor turpis. Vestibulum nisl diam, cursus at fermentum ac, scelerisque vel ipsum. Curabitur ac
-					molestie leo. Vestibulum eu aliquam arcu. Donec pulvinar vestibulum blandit. Nunc vel turpis at elit
-					commodo gravida eu at dolor. Nulla ac augue turpis. Donec volutpat facilisis nunc. Pellentesque
-					feugiat neque id odio aliquam blandit. Vivamus posuere congue mi vitae interdum. Sed aliquam lacus
-					sed erat tincidunt eleifend. Quisque eros lacus
-				</p>
+				<p className="misionText">prueba</p>
 			</div>
 		</div>
 	);
