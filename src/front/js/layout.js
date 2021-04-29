@@ -15,6 +15,7 @@ import { RegisterPage } from "./pages/register";
 import { Hoteles } from "./pages/hotelesrestaurantes";
 import { SocialPage } from "./pages/social";
 import { ForgotPassword } from "./pages/forgotpassword";
+import { ResetPassword } from "./pages/resetpassword";
 
 //create your first component
 const Layout = () => {
@@ -39,6 +40,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/forgotpassword">
 							<ForgotPassword />
+						</Route>
+						<Route exact path="/resetpassword">
+							<ResetPassword />
 						</Route>
 						<Route exact path="/hotelesrestaurantes">
 							<Hoteles />
