@@ -124,7 +124,7 @@ export const LoginPage = () => {
 						¿Olvido su contraseña?
 						<Link to={"/forgotpassword"} style={{ color: "white", paddingLeft: "2px" }}>
 							{""}
-							Solicitar nueva contraseña
+							Recuperar contraseña
 						</Link>
 					</div>
 				</div>
