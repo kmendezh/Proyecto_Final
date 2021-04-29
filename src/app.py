@@ -5,6 +5,7 @@ import os
 from flask import Flask, request, jsonify, url_for, send_from_directory
 from flask_migrate import Migrate
 from flask_swagger import swagger
+from flask_mail import Mail, Message
 from flask_cors import CORS
 from api.utils import APIException, generate_sitemap
 from api.models import db, User
@@ -42,6 +43,28 @@ app.register_blueprint(api, url_prefix='/api')
 # config for jwt
 app.config["JWT_SECRET_KEY"] = "4G33k5#."
 jwt = JWTManager(app)
+
+# Configuration sen email
+
+mail_settings = {
+    "MAIL_SERVER": 'smtp.gmail.com',
+    "MAIL_PORT": 465,
+    "MAIL_USE_TLS": False,
+    "MAIL_USE_SSL": True,
+    "MAIL_USERNAME": "fullstacks2@gmail.com",
+    "MAIL_PASSWORD": "4G33k5#."
+}
+
+app.config.update(mail_settings)
+mail = Mail(app)
+# test email sent
+@app.route('/sendemail/<string:email>', methods=['POST', 'GET'])
+def send_email(email):
+
+    msg = Message(subject='Hello from the other side!', sender = app.config.get("MAIL_USERNAME"), recipients = [email])
+    msg.body = "Send Email Using Your Flask app, look if it works"
+    mail.send(msg)
+    return jsonify("Email Sent"),200
 
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)
