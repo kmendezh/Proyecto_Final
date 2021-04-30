@@ -18,7 +18,6 @@ import { ForgotPassword } from "./pages/forgotpassword";
 import { ResetPassword } from "./pages/resetpassword";
 import { Contacts } from "./component/Contacts";
 
-
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain

@@ -45,8 +45,8 @@ export const Home = () => {
 			<div className="resenaBox">
 				<h1 className="resenaTitle">Reseña</h1>
 				<p className="resenaText">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce.
+					Somos una red social que ofrece sugerencias de viajes o tours en Costa Rica a partir de las
+					experiencias de nuestros usuarios
 				</p>
 			</div>
 			<div className="howItWorks">
