@@ -9,12 +9,10 @@ export function Vision() {
 			<div className="vision">
 				<h1 className="visionHeader">Vision</h1>
 				<p className="visionText">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis ante pulvinar, laoreet leo at,
-					tempor turpis. Vestibulum nisl diam, cursus at fermentum ac, scelerisque vel ipsum. Curabitur ac
-					molestie leo. Vestibulum eu aliquam arcu. Donec pulvinar vestibulum blandit. Nunc vel turpis at elit
-					commodo gravida eu at dolor. Nulla ac augue turpis. Donec volutpat facilisis nunc. Pellentesque
-					feugiat neque id odio aliquam blandit. Vivamus posuere congue mi vitae interdum. Sed aliquam lacus
-					sed erat tincidunt eleifend. Quisque eros lacus
+					Ser la red social número uno de consulta sobre destinos turísticos en Costa Rica con una amplia base
+					de datos en tours, hoteles y restaurantes. A partir de la red social social, se busca compartir
+					experiencias que permitan promover el turismo nacional y generar una red de aliados para fomentar la
+					economía nacional
 				</p>
 			</div>
 			<div className="visionImg">

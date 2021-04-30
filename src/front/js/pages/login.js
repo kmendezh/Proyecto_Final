@@ -74,7 +74,7 @@ export const LoginPage = () => {
 						</button>
 					</div>
 				) : null}
-				<div className="container">
+				<div className="container" style={{ marginBottom: "100px" }}>
 					<h1 className="header"> Login</h1>
 
 					<div className="input-group input-group-lg userInput">
