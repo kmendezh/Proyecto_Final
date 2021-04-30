@@ -27,21 +27,32 @@ export function Contacts() {
 				<h1 className="cont">Contactenos y con gusto le responderemos</h1>
 			</div>
 			<div>
-				<h2>Para contactarnos,complete el siguiente formulario</h2>
-				<p>Nosotros te contactaremos de vuelta en menos de 48 horas</p>
+				{/* <h2>Para contactarnos,complete el siguiente formulario</h2>
+				<p>Nosotros te contactaremos de vuelta en menos de 48 horas</p> */}
 			</div>
 			<br></br>
 			<br></br>
-			<div className="container containerform">
+			<div className="jumbotron jumboform">
+				<h2>Para contactarnos,complete el siguiente formulario</h2>
+				<p>Nosotros te contactaremos de vuelta en menos de 48 horas</p>
 				<form onSubmit={SendEmail}>
 					<div className="row pt-5 mx-auto">
 						<div className="col-8 form-group mx-auto">
+							<h3>
+								<strong>Nombre Completo</strong>
+							</h3>
 							<input type="text" className="form-control" placeholder="nombre" name="name" />
 						</div>
 						<div className="col-8 form-group  pt-2 mx-auto">
+							<h3>
+								<strong>Su Email</strong>
+							</h3>
 							<input type="email" className="form-control" placeholder="Email" name="email" />
 						</div>
 						<div className="col-8 form-group  pt-2 mx-auto">
+							<h3>
+								<strong>Razon por la que nos contacta</strong>
+							</h3>
 							<textarea
 								className="form-control"
 								id=""
@@ -51,23 +62,21 @@ export function Contacts() {
 								name="message">
 								{" "}
 							</textarea>
-							<input type="submit" value="enviar" />
+							<input
+								type="submit"
+								value="enviar"
+								onClick={() => {
+									alert(
+										"Gracias por contactarnos,te responderemos tus consultas lo mas pronto posible."
+									);
+								}}
+							/>
 						</div>
 					</div>
 				</form>
 			</div>
-			\<div className="container-fluid"></div>
-			<h1>Encuentranos en nuestras redes sociales</h1>
-			<div className="row">
-				<div className="col md-3">
-					<a href="https://www.facebook.com/PuraVidaPassport/" target="_blank" rel="noopener noreferrer">
-						<i className="fab fa-facebook-f" />
-					</a>
-				</div>
-				<div className="col md-3">icono</div>
-				<div className="col md-3">icono</div>
-				<div className="col md-3">icono</div>
-			</div>
+			<h1>¡Síguenos en nuestras redes sociales!</h1>
+			<i className="fas fa-arrow-circle-down" style={{ fontSize: "40px" }}></i>
 		</div>
 	);
 }
