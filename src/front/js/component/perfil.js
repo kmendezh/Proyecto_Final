@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import { Container, Image, Col, Row, Dropdown, Form } from "react-bootstrap";
+import { Container, Image, Col, Row, Dropdown, Form, Jumbotron } from "react-bootstrap";
 import { FcCameraIdentification } from "react-icons/fc";
 import "../../styles/perfil.css";
 import { Link } from "react-router-dom";
 
 export const Perfil = () => {
 	return (
-		<Container fluid>
-			<div className="miperfil">
+		<div className="perfil ">
+			<div className="miperfil d-flex justify-content-center">
 				<h1>
 					Mi perfil <i className="fas fa-user-alt" style={{ fontSize: "40px" }} />
 				</h1>
 			</div>
-			<Row>
-				<Col xs={6} md={4}>
+			<Row className="rowsperfil">
+				<Col xs={6} md={2}>
 					<Image
 						src="https://miperfil.ucr.ac.cr/static/ucr/img/miperfil/PORTADA-500X500.png"
 						roundedCircle
@@ -21,31 +21,35 @@ export const Perfil = () => {
 					/>
 					<h1>
 						<button type="button" className="btn btn-secondary">
-							Edit profile
+							<i className="fas fa-user-edit"></i> Editar mi perfil
 						</button>
 					</h1>
 					{/* <h2>Estudiante de 4Geeks</h2>
 					<h2>Amante de la naturaleza</h2> */}
 				</Col>
-				<Col xs={6} md={4} className="d-flex flex-wrap align-content-center">
+				<Col xs={6} md={3}>
 					<h1>Informacion personal</h1>
-					<h2>Nombre:Yeison Diaz</h2>
-					<h2>Email:fake@gmail.com</h2>
-					<h2>Publicaciones:9</h2>
-				</Col>
-				<Col xs={6} md={3} className="d-flex flex-wrap align-content-center">
-					<h1>Acerca de mi</h1>
 					<h2>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-						the industrys.
+						<i className="fas fa-user"></i> Nombre:Yeison Diaz
 					</h2>
+					<h2>
+						{" "}
+						<i className="fas fa-envelope"></i>Email:fake@gmail.com
+					</h2>
+					<h2>
+						<i className="fas fa-map-marked"></i>Publicaciones:9
+					</h2>
+				</Col>
+				<Col xs={6} md={3}>
+					<h1>Acerca de mi</h1>
+					<h2>Soy un estudiante de 4weeks Academy,actualmente me preparo para ser un Full Stack Developer</h2>
 				</Col>
 			</Row>
 
 			<br></br>
 			<br></br>
 			<br></br>
-			<div>
+			<div className="postnuevo">
 				<Dropdown>
 					<Dropdown.Toggle variant="success" id="dropdown-basic">
 						<i className="fas fa-plus" style={{ fontSize: "40px" }} />
@@ -148,6 +152,6 @@ export const Perfil = () => {
 					/>
 				</Col>
 			</Row>
-		</Container>
+		</div>
 	);
 };

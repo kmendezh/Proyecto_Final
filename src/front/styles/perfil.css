@@ -11,17 +11,36 @@
 .fotos {
     
     margin-bottom: 10px;
-    justify-content:space-around;
     background-color: white;
+    height: auto;
 
 }
 .fotos img{
 display: inline-block;
 padding-bottom: 25px;
-padding-right: 5px;
+padding-right: 1px;
 padding-top: 25px;
+border-radius: 3px;
 }
 
 .miperfil{
       text-align: center
+}
+
+.row {
+    /* background-color:white; */
+    padding-top: 1%;
+    margin-top: 5px;
+   
+}
+
+
+.rowsperfil{
+    justify-content: space-between;
+    background-color: grey; 
+        height: auto;      
+}
+
+.postnuevo{
+  justify-items: auto;
 }
