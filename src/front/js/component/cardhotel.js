@@ -14,9 +14,13 @@ const CardHotel = props => {
 							<h5 className="card-title">{props.title} </h5>
 						</div>
 						<div className="d-flex flex-column p-0">
-							<p>{props.descripcion}</p>
+							<p className="card-text">{props.descripcion}</p>
 							<p className="p-0">
-								Descuentos desde {props.descuento1} % hasta {props.descuento2} %{" "}
+								Descuentos desde {props.descuento1} % hasta {props.descuento2} %
+							</p>
+							<p>
+								Precio {props.desprecio} {props.simbolo}
+								{props.moneda}
 							</p>
 						</div>
 					</div>
@@ -31,7 +35,10 @@ CardHotel.propTypes = {
 	title: PropTypes.string,
 	descripcion: PropTypes.string,
 	descuento1: PropTypes.number,
-	descuento2: PropTypes.number
+	descuento2: PropTypes.number,
+	simbolo: PropTypes.string,
+	desprecio: PropTypes.string,
+	moneda: PropTypes.number
 };
 
 export default CardHotel;
