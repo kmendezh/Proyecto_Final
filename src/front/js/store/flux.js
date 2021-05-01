@@ -108,7 +108,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const urlAPI = "https://community-open-weather-map.p.rapidapi.com/weather?";
 
 				let myHeaders = new Headers();
-				myHeaders.append("x-rapidapi-key", "acff19e957msh166faf91c033172p1358dbjsn5c9cbdd037f7");
+				myHeaders.append("x-rapidapi-key", "edbb58d21emsh8a7986768b328b5p1e89f0jsndade19458791");
 
 				let requestOptions = {
 					method: "GET",
