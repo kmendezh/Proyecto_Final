@@ -20,7 +20,7 @@ class User(db.Model):
             "email": self.email,
             "username": self.username,
             "idrespuesta": self.idrespuesta,
-            "respuesta": self.respuesta
+            "respuesta": self.respuesta,
             # do not serialize the password, its a security breach
         }
 class Post(db.Model):
@@ -31,6 +31,8 @@ class Post(db.Model):
     comment = db.Column(db.String(300), nullable=False)
     url = db.Column(db.String(300), nullable=False)
     provincia = db.Column(db.String(30), nullable=False)
+    dificultad = db.Column(db.String(30), nullable=False)
+    duracion = db.Column(db.Integer, nullable=False)
     total_comment = db.Column(db.Integer, nullable=False)
     total_like = db.Column(db.Integer, nullable=False)
     iduser = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -48,10 +50,13 @@ class Post(db.Model):
             "comment": self.comment,
             "url": self.url,
             "provincia": self.provincia,
+            "dificultad": self.dificultad,
+            "duracion": self.duracion,
             "total_comment": self.total_comment,
             "total_like": self.total_like,
             "iduser": self.iduser
         }
+        
 class Post_like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime, nullable=False)
