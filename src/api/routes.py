@@ -49,6 +49,7 @@ def register():
         raise APIException('El usuario ya se encuentra registrado', status_code=410)
     
     # registro del nuevo usuario
+    # se usa la funcion generate_password_hash para encriptar el password y la respuesta a la pregunta de seguridad que el usuario registro
     newUser = User(username=username, email=email,
     password=generate_password_hash(password, "sha256"), is_active=is_active, security_question = security_question, security_answer = generate_password_hash(security_answer, "sha256")) 
     db.session.add(newUser)
@@ -56,6 +57,7 @@ def register():
 
     return jsonify('Se registro el usuario correctamente'), 200
 
+#actualiza el password si el usuario olvida su constraseña
 @api.route('/updatepassword/<int:id>', methods=['POST'])
 def updatepassword(id):
 
@@ -65,12 +67,49 @@ def updatepassword(id):
     if user1 is None:
         raise APIException('Usuario no existe', status_code=404)
 
-    if "password" in body:
+    if "password" in body :
         #se encripta el password
         user1.password = generate_password_hash(body["password"], "sha256")
     db.session.commit()
 
     return jsonify('El password se actualizo correctamente'), 200
+
+# esta ruta obtiene la pregunta de seguridad que registro el usuario
+@api.route('/postsecurityquestion', methods=['POST'])
+def get_security_question():
+
+    email = request.json.get("email", None)
+   
+    if email is None:
+        return jsonify({"msg": "No email was provided"}), 400
+
+    user = User.query.filter_by(email=email).first()
+    if user is None:
+        return jsonify({"msg": "Invalid email"}), 401
+    else:
+        print(user)
+        return jsonify({ "user_id": user.id, "security_question": user.security_question}), 200
+
+# esta ruta valida si la respuesta de seguridad que registro el usuario es True o False
+@api.route('/postsecurityanswer', methods=['POST'])
+def get_security_answer():
+
+    iduser = request.json.get("id", None)
+    security_answer = request.json.get("security_answer", None)
+   
+    if securityanswer is None:
+        return jsonify({"msg": "No security_answer was provided"}), 400
+    if iduser is None:
+        return jsonify({"msg": "No id user was provided"}), 400
+
+    user = User.query.filter_by(id=id).first()
+    result = check_password_hash(user.security_answer, security_answer)
+    if user is None or result == False:
+        # the user was not found on the database
+        return jsonify({"msg": "Invalid security answer or id user"}), 401
+    else:
+        print(user)
+        return jsonify({ "user_id": user.id, "estado": result}), 200
 
 @api.route('/login', methods=['POST'])
 def create_token():
