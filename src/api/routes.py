@@ -16,7 +16,7 @@ api = Blueprint('api', __name__)
 ######################### Protected endpoints #########################
 
 # Add a new POST
-@app.route('/addNewPost', methods=['POST'])
+@api.route('/addNewPost', methods=['POST'])
 @jwt_required()
 def addNewPost():
 
