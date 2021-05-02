@@ -3,14 +3,66 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
 from flask_mail import Mail, Message
-from api.models import db, User
+from api.models import db, User, Post
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash, check_password_hash
+import datetime
 
 #import JWT for tokenization
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
 api = Blueprint('api', __name__)
+
+######################### Protected endpoints #########################
+
+# Add a new POST
+@api.route('/addNewPost', methods=['POST'])
+@jwt_required()
+def addNewPost():
+
+    # Obtener el ID del usuario registrado get_jwt_identity
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+
+    # Se reporta un error si no esta registrado
+    if user is None:
+        raise APIException('No se ha iniciado sesión', status_code=400)
+
+    #Obtener el request body
+    request_body = request.get_json()
+    # Validate the data
+    if (request_body["title"] is None or request_body["comment"] is None or request_body["url"] is None or request_body["provincia"] is None \
+        or request_body["dificultad"] is None or request_body["duracion"] is None):
+        raise APIException('Request Body inválido. Uno o más parámetros están vacíos', status_code=400)
+
+    #Create the new entry
+    createdDate = datetime.datetime.now()
+    createdDate = createdDate.strftime("%d/%m/%Y %H:%M:%S")
+    updatedDate = datetime.datetime.now()
+    updatedDate = updatedDate.strftime("%d/%m/%Y %H:%M:%S")
+    total_comment = 0
+    total_like = 0
+    newPost = Post(created = createdDate, updated = updatedDate, title = request_body["title"], comment = request_body["comment"],\
+        url = request_body["url"], provincia = request_body["provincia"], dificultad = request_body["dificultad"], duracion = request_body["duracion"],\
+        total_comment = request_body["total_comment"], total_like = request_body["total_like"], iduser = user.id)
+
+    db.session.add(newPost)
+    db.session.commit()     
+
+    return jsonify('Nuevo Post publicado'), 200
+
+
+####################################################################
+
+
+@api.route('/getPost', methods=['GET'])
+def getPost():
+
+    post_query = Post.query.all()
+
+    posts = list(map(lambda x: x.serialize(), post_query))
+
+    return jsonify(posts), 200
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
