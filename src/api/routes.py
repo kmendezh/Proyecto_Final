@@ -44,7 +44,7 @@ def addNewPost():
     total_like = 0
     newPost = Post(created = createdDate, updated = updatedDate, title = request_body["title"], comment = request_body["comment"],\
         url = request_body["url"], provincia = request_body["provincia"], dificultad = request_body["dificultad"], duracion = request_body["duracion"],\
-        total_comment = request_body["total_comment"], total_like = request_body["total_like"], iduser = user.id)
+        total_comment = total_comment, total_like = total_like, iduser = user.id)
 
     db.session.add(newPost)
     db.session.commit()     
