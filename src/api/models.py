@@ -19,8 +19,8 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "username": self.username,
-            "respuesta": self.security_answer,
-            "pregunta": self.security_question
+            "security_answer": self.security_answer,
+            "security_question": self.security_question
             # do not serialize the password, its a security breach
         }
 class Post(db.Model):
