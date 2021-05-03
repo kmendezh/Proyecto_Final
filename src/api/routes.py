@@ -53,8 +53,17 @@ def addNewPost():
 
 
 ####################################################################
+# Ruta de prueba para ver los usuarios registrados
+@api.route('/getUser', methods=['GET'])
+def getUser():
 
+    user_query = User.query.all()
 
+    users = list(map(lambda x: x.serialize(), user_query))
+
+    return jsonify(users), 200
+
+# Ruta de prueba para ver los POST
 @api.route('/getPost', methods=['GET'])
 def getPost():
 
