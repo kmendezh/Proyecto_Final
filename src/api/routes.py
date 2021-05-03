@@ -175,16 +175,19 @@ def get_security_answer():
 @api.route('/login', methods=['POST'])
 def create_token():
     email = request.json.get("email", None)
-    #se encripta el password
-    password = generate_password_hash(request.json.get("password", "sha256"), None)
+    password = request.json.get("password", None)
     
     if email is None:
         return jsonify({"msg": "No email was provided"}), 400
     if password is None:
         return jsonify({"msg": "No password was provided"}), 400
 
-    user = User.query.filter_by(email=email, password=password).first()
-    if user is None:
+    # Se obtienen los credenciales del usuario solicitado
+    user = User.query.filter_by(email=email).first()
+    # Si el password encriptado no coincide con el password ingresado, no se acepta
+    result = check_password_hash(user.password,password)
+    
+    if result is False:
         # the user was not found on the database
         return jsonify({"msg": "Invalid username or password"}), 401
     else:
