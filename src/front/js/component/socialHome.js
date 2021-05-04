@@ -12,15 +12,18 @@ export const SocialHome = () => {
 		<div>
 			<div className="flexContainer">
 				<div className="flexColumn">
-					<SocialCardsState
-						state="Guanacaste"
-						height="450px"
-						width="470px"
-						url="https://aihkcdnstoragep01.blob.core.windows.net/pgl-release/Images/ArticleImages/19/19235.jpg"
-						weather={store.statesTemp[4].weather}
-						tmpMin={store.statesTemp[4].tempMin}
-						tmpMax={store.statesTemp[4].tempMax}
-					/>
+					<Link to={"/socialFeed"}>
+						<SocialCardsState
+							state="Guanacaste"
+							height="450px"
+							width="470px"
+							url="https://aihkcdnstoragep01.blob.core.windows.net/pgl-release/Images/ArticleImages/19/19235.jpg"
+							weather={store.statesTemp[4].weather}
+							tmpMin={store.statesTemp[4].tempMin}
+							tmpMax={store.statesTemp[4].tempMax}
+						/>
+					</Link>
+
 					<div className="flexRow">
 						<SocialCardsState
 							state="San Jose"
