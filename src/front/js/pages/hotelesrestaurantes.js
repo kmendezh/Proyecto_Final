@@ -1,6 +1,7 @@
 import React from "react";
 import CardHotel from "../component/cardhotel";
 // import "../../styles/home.css";
+import Rating from "../component/rating";
 
 export const Hoteles = () => {
 	return (
@@ -17,6 +18,8 @@ export const Hoteles = () => {
 					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
 						descuento={35}
 					/>
+					<Rating />
+
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1024x768/254/254480509.jpg"
 						title="Croc's Resort & Casino"
