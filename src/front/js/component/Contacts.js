@@ -51,6 +51,12 @@ export function Contacts() {
 						</div>
 						<div className="col-8 form-group  pt-2 mx-auto">
 							<h3>
+								<strong>Algun telefono donde te podamos contactar</strong>
+							</h3>
+							<input type="email" className="form-control" placeholder="telefono" name="phone" />
+						</div>
+						<div className="col-8 form-group  pt-2 mx-auto">
+							<h3>
 								<strong>Razon por la que nos contacta</strong>
 							</h3>
 							<textarea
