@@ -3,7 +3,8 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPI = "https://proyecto-tours.herokuapp.com/api/register";
+// const urlAPI = "https://proyecto-tours.herokuapp.com/api/register";
+const urlAPI = "https://3001-lavender-pike-jxeqhq0w.ws-us03.gitpod.io/api/register";
 
 export const RegisterPage = () => {
 	// Get Store
@@ -19,7 +20,9 @@ export const RegisterPage = () => {
 			email: email,
 			password: password,
 			username: userName,
-			is_active: false
+			is_active: false,
+			security_question: securityquestion,
+			security_answer: securityanswer
 		});
 
 		let requestOptions = {
@@ -52,6 +55,8 @@ export const RegisterPage = () => {
 	// Variables to handle email, password
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [securityquestion, setSecurityquestion] = useState("");
+	const [securityanswer, setSecurityanswer] = useState("");
 	const [authentication, setAuth] = useState(false);
 	const [userName, setUserName] = useState("");
 	const [errorWindow, setErrorWindow] = useState(false);
@@ -124,6 +129,36 @@ export const RegisterPage = () => {
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
 							placeholder="Contraseña"
+						/>
+					</div>
+					<div className="input-group input-group-lg userInput">
+						<div className="input-group-prepend">
+							<span className="input-group-text" id="inputGroup-sizing-lg">
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
+							</span>
+						</div>
+						<input
+							onChange={e => setSecurityquestion(e.target.value)}
+							type="text"
+							className="form-control"
+							aria-label="Large"
+							aria-describedby="inputGroup-sizing-sm"
+							placeholder="Pregunta de seguridad"
+						/>
+					</div>
+					<div className="input-group input-group-lg userInput">
+						<div className="input-group-prepend">
+							<span className="input-group-text" id="inputGroup-sizing-lg">
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
+							</span>
+						</div>
+						<input
+							onChange={e => setSecurityanswer(e.target.value)}
+							type="text"
+							className="form-control"
+							aria-label="Large"
+							aria-describedby="inputGroup-sizing-sm"
+							placeholder="Respuesta de seguridad"
 						/>
 					</div>
 					<div style={{ marginBottom: "20px" }}>

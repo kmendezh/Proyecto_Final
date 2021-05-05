@@ -21,7 +21,7 @@
 .containerRegister
 {
     margin: auto;
-    width: 25%;
+    width: 28%;
     justify-content: center;
     background-color: rgba(228, 228, 228, 0.15);
     border: 1px solid white;
@@ -37,7 +37,7 @@
     animation-duration: 3s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-    height: 550px;
+    height: 700px;
 }
 
 .containerForgot
