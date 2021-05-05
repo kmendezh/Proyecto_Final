@@ -52,7 +52,7 @@ const Layout = () => {
 						<Route exact path="/social">
 							<SocialPage />
 						</Route>
-						<Route exact path="/socialFeed">
+						<Route exact path="/socialFeed/:stateId">
 							<SocialFeed />
 						</Route>
 						<Route exact path="/demo">

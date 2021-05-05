@@ -57,9 +57,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 					tempMax: "",
 					weather: ""
 				}
-			]
+			],
+
+			posts: []
 		},
 		actions: {
+			// Get Posts
+			getPosts: async () => {
+				//get the store
+				const store = getStore();
+				let tmpArray = store.posts;
+				// Fetch - Get Posts
+				let requestOptions = {
+					method: "GET",
+					redirect: "follow"
+				};
+
+				await fetch("https://3001-maroon-dingo-ll24z8zy.ws-us03.gitpod.io/api/getPost", requestOptions)
+					.then(response => response.json())
+					.then(result => {
+						tmpArray = result;
+					})
+					.catch(error => console.log("error", error));
+
+				//reset the global store
+				setStore({ posts: tmpArray });
+			},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

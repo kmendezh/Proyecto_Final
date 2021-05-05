@@ -5,18 +5,14 @@ import "../../styles/tourCard.css";
 import { func } from "prop-types";
 
 export const TourCard = () => {
-	const starClasses = ["far fa-star", "fas fa-star", "fas fa-star-half-alt"];
-
 	const rating = "70%";
-	const rateStars = (70 * 5) / 100;
-
-	// Print the rate
+	const rateStars = 3.5;
 
 	return (
 		<div className="cardTourContainer">
 			<div className="cardTourImage">
 				<img
-					src="https://lh3.googleusercontent.com/proxy/vMBlS81XFArPth02ua-LNJd-zO5R_3XenTXoujoXPYcRWsZsAFv67klrn4IAze1GZI-S6X6Rn-r-gxoCrpJFFefqtXHC2SiMbogNpiNO3cbJpvenxdWyhjJXH3eNVuMwGiXIAZp4qs8Gt3jlL_Bcz3aM9hqijpNm93ouP72nkyT6Zg"
+					src="https://media-cdn.tripadvisor.com/media/photo-c/2560x500/08/16/c8/57/issys-tours-costa-rica.jpg"
 					style={{ width: "100%", height: "100%" }}></img>
 			</div>
 			<div className="cardTourText">
