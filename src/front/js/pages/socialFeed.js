@@ -30,9 +30,8 @@ export const SocialFeed = () => {
 	let cardsToDisplay = store.posts.filter(filterbyState);
 	console.log("Cards:", cardsToDisplay);
 
-	return (
-		<div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-			<TourCard />
-		</div>
-	);
+	// Render the element
+	cardsToDisplay = cardsToDisplay.map((element, index) => <TourCard key={element.id} cardInfo={element} />);
+
+	return <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>{cardsToDisplay}</div>;
 };
