@@ -30,10 +30,10 @@ export const ForgotPassword = () => {
 		await fetch(urlAPILogin, requestOptions)
 			.then(response => response.json())
 			.then(result => {
-				console.log(result);
+				// console.log(result);
 				if (result.user_id != undefined) {
 					console.log("Obtuvo datos");
-					actions.setForgotPswdId(result.user_id);
+					actions.setForgotPswdId(result);
 					setAuth(true);
 				} else {
 					setErrorWindow(true);

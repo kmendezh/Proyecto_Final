@@ -79,6 +79,20 @@ export const ResetPassword = () => {
 				) : null}
 				<div className="container">
 					<h1 className="header">Reset Password</h1>
+					<div className="input-group input-group-lg userInput">
+						<div className="input-group-prepend">
+							<span className="input-group-text" id="inputGroup-sizing-lg">
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
+							</span>
+						</div>
+						<input
+							defaultValue={store.forgotPswdId.security_question}
+							type="text"
+							className="form-control"
+							aria-label="Large"
+							aria-describedby="inputGroup-sizing-sm"
+						/>
+					</div>
 
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
