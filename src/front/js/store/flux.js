@@ -57,9 +57,46 @@ const getState = ({ getStore, getActions, setStore }) => {
 					tempMax: "",
 					weather: ""
 				}
-			]
+			],
+
+			posts: [],
+
+			forgotPswdId: 0
 		},
 		actions: {
+			// Update the User ID to set new psw
+			setForgotPswdId: newId => {
+				//get the store
+				const store = getStore();
+				let tmp = store.forgotPswdId;
+				tmp = newId;
+
+				//reset the global store
+				setStore({ forgotPswdId: tmp });
+			},
+
+			// Get Posts
+			getPosts: async () => {
+				//get the store
+				const store = getStore();
+				let tmpArray = store.posts;
+				// Fetch - Get Posts
+				let requestOptions = {
+					method: "GET",
+					redirect: "follow"
+				};
+
+				await fetch("https://3001-maroon-dingo-ll24z8zy.ws-us03.gitpod.io/api/getPost", requestOptions)
+					.then(response => response.json())
+					.then(result => {
+						tmpArray = result;
+					})
+					.catch(error => console.log("error", error));
+
+				//reset the global store
+				setStore({ posts: tmpArray });
+			},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -108,7 +145,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const urlAPI = "https://community-open-weather-map.p.rapidapi.com/weather?";
 
 				let myHeaders = new Headers();
-				myHeaders.append("x-rapidapi-key", "acff19e957msh166faf91c033172p1358dbjsn5c9cbdd037f7");
+				myHeaders.append("x-rapidapi-key", "edbb58d21emsh8a7986768b328b5p1e89f0jsndade19458791");
 
 				let requestOptions = {
 					method: "GET",

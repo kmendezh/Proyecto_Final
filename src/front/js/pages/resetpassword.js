@@ -3,11 +3,13 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPILogin = "https://3001-azure-cougar-47rfuuyp.ws-us03.gitpod.io/api/login";
+const urlAPILogin = "https://3001-bronze-mammal-ufowebr8.ws-us03.gitpod.io/api/login";
 
 export const ResetPassword = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
+
+	console.log("Reset Password for User Id ", store.forgotPswdId);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
