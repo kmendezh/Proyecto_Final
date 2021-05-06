@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/login.css";
 import { Link, useParams, Redirect } from "react-router-dom";
 
-const urlAPILogin = "https://3001-azure-cougar-47rfuuyp.ws-us03.gitpod.io/api/login";
+const urlAPILogin = "https://3001-bronze-mammal-ufowebr8.ws-us03.gitpod.io/api/postsecurityquestion";
 
 export const ForgotPassword = () => {
 	// Get Store
@@ -25,21 +25,22 @@ export const ForgotPassword = () => {
 			body: raw,
 			redirect: "follow"
 		};
+		console.log("Entramos a Handle Submit");
 
-		// 	await fetch(urlAPILogin, requestOptions)
-		// 		.then(response => response.text())
-		// 		.then(result => {
-		// 			result = JSON.parse(result);
-		// 			if (result.token != undefined) {
-		// 				sessionStorage.setItem("token", result.token);
-		// 				console.log("Token guardado");
-		// 				setAuth(true);
-		// 			} else {
-		// 				setErrorWindow(true);
-		// 				setErrorMsg("Correo y/o contraseña inválidos");
-		// 			}
-		// 		})
-		// 		.catch(error => console.log("error", error));
+		await fetch(urlAPILogin, requestOptions)
+			.then(response => response.json())
+			.then(result => {
+				console.log(result);
+				if (result.user_id != undefined) {
+					console.log("Obtuvo datos");
+					actions.setForgotPswdId(result.user_id);
+					setAuth(true);
+				} else {
+					setErrorWindow(true);
+					setErrorMsg("Correo y/o contraseña inválidos");
+				}
+			})
+			.catch(error => console.log("error", error));
 	};
 
 	const closeWindow = () => {
@@ -105,7 +106,7 @@ export const ForgotPassword = () => {
 					</div>
 				</div>
 
-				{authentication ? <Redirect to="/perfil" /> : null}
+				{authentication ? <Redirect to="/resetpassword" /> : null}
 			</form>
 		</div>
 	);

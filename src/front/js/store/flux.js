@@ -59,9 +59,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 
-			posts: []
+			posts: [],
+
+			forgotPswdId: 0
 		},
 		actions: {
+			// Update the User ID to set new psw
+			setForgotPswdId: newId => {
+				//get the store
+				const store = getStore();
+				let tmp = store.forgotPswdId;
+				tmp = newId;
+
+				//reset the global store
+				setStore({ forgotPswdId: tmp });
+			},
+
 			// Get Posts
 			getPosts: async () => {
 				//get the store
