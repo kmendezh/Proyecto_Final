@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPILogin = "https://3001-bronze-mammal-ufowebr8.ws-us03.gitpod.io/api/login";
+const urlAPILogin = "https://3001-lavender-orangutan-dgcn67sy.ws-us03.gitpod.io//api/login";
 
 export const ResetPassword = () => {
 	// Get Store
@@ -79,21 +79,6 @@ export const ResetPassword = () => {
 				) : null}
 				<div className="container">
 					<h1 className="header">Reset Password</h1>
-					<div className="input-group input-group-lg userInput">
-						<div className="input-group-prepend">
-							<span className="input-group-text" id="inputGroup-sizing-lg">
-								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
-							</span>
-						</div>
-						<input
-							defaultValue={store.forgotPswdId.security_question}
-							type="text"
-							className="form-control"
-							aria-label="Large"
-							aria-describedby="inputGroup-sizing-sm"
-						/>
-					</div>
-
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
 							<span className="input-group-text" id="inputGroup-sizing-lg">

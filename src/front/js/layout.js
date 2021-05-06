@@ -15,6 +15,7 @@ import { RegisterPage } from "./pages/register";
 import { Hoteles } from "./pages/hotelesrestaurantes";
 import { SocialPage } from "./pages/social";
 import { ForgotPassword } from "./pages/forgotpassword";
+import { SecurityQuestion } from "./pages/securityquestion";
 import { ResetPassword } from "./pages/resetpassword";
 import { Contacts } from "./component/Contacts";
 import { SocialFeed } from "./pages/socialFeed";
@@ -42,6 +43,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/forgotpassword">
 							<ForgotPassword />
+						</Route>
+						<Route exact path="/securityquestion">
+							<SecurityQuestion />
 						</Route>
 						<Route exact path="/resetpassword">
 							<ResetPassword />
