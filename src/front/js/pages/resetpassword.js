@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPI = "https://3001-rose-eagle-9sjuf117.ws-us03.gitpod.io/api/updatepassword";
+const urlAPI = "https://3001-black-mole-w5tm1f7k.ws-us03.gitpod.io/api/updatepassword/";
 
 export const ResetPassword = () => {
 	// Get Store
@@ -19,29 +19,20 @@ export const ResetPassword = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		if (!password || password === "") {
+		if (password === "") {
 			setErrorWindow(true);
 			setErrorMsg("Por favor ingrese su contraseña");
-		}
-
-		if (!passwordConfirm || passwordConfirm === "") {
+		} else if (passwordConfirm === "") {
 			setErrorWindow(true);
 			setErrorMsg("Por favor ingrese su confirmacion de la contraseña");
-		}
-
-		if (typeof password != undefined && typeof confirm_password != undefined) {
-			if (password != confirm_password) {
-				setErrorWindow(true);
-				setErrorMsg("Las contraseñas no coinciden");
-			}
-		}
-
-		if (errorWindow === false) {
+		} else if (password != passwordConfirm) {
+			setErrorWindow(true);
+			setErrorMsg("Las contraseñas no coinciden");
+		} else {
 			let myHeaders = new Headers();
 			myHeaders.append("Content-Type", "application/json");
 
 			let raw = JSON.stringify({
-				email: email,
 				password: password
 			});
 
@@ -52,7 +43,11 @@ export const ResetPassword = () => {
 				redirect: "follow"
 			};
 
-			let response = await fetch(urlAPI + store.forgotPswdId.user_id, requestOptions);
+			let url = urlAPI + store.forgotPswdId.user_id;
+
+			console.log(url);
+
+			let response = await fetch(url, requestOptions);
 			if (response.status != 200) {
 				setErrorWindow(true);
 				setErrorMsg("Error al actualizar la contraseña");

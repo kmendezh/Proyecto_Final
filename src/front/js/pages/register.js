@@ -4,7 +4,7 @@ import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
 // const urlAPI = "https://proyecto-tours.herokuapp.com/api/register";
-const urlAPI = "https://3001-rose-eagle-9sjuf117.ws-us03.gitpod.io/api/register";
+const urlAPI = "https://3001-black-mole-w5tm1f7k.ws-us03.gitpod.io/api/register";
 
 export const RegisterPage = () => {
 	// Get Store
