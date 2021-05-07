@@ -8,16 +8,25 @@ import "../../styles/socialComment.css";
 export const SocialComment = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
-    const params = useParams();
+	const params = useParams();
 
-    return (<div className="socialCommentContainer">
+	let postId = params.postId;
 
-            <div className= "socialCommentImage">
+	// Store the param id in the session storage in case that the page be updated
+	if (postId == undefined) {
+		postId = sessionStorage.getItem("postID");
+	} else {
+		sessionStorage.setItem("postID", postId);
+	}
 
-            </div>
-            <div className="socialCommentText">
-
-            </div>
-    </div>);
-    
-}
+	return (
+		<div className="socialCommentContainer">
+			<div className="socialCommentImage"></div>
+			<div className="socialCommentText">
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	);
+};

@@ -39,9 +39,11 @@ export const TourCard = prop => {
 				<div className="tourItems iconTour">
 					<i className="fas fa-comments iconSocial"></i>
 					<i className="fas fa-star-half-alt iconSocial"></i>
-					<button type="button" className="btn btn-info buttonSocial">
-						Ver más
-					</button>
+					<Link to={"/socialComment/" + prop.cardInfo.id}>
+						<button type="button" className="btn btn-info buttonSocial">
+							Ver más
+						</button>
+					</Link>
 				</div>
 			</div>
 		</div>

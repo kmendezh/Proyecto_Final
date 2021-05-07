@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+
+.socialCommentContainer
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 40%;
+    height: 900px;
+    justify-content: center;
+
+}
+
+.socialCommentImage
+{
+    height: 400px;
+    width: 100%;
+}
+
+.socialCommentText
+{
+    font-family: "Abel";
+}
+

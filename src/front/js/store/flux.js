@@ -64,9 +64,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			forgotPswdId: {
 				security_question: "",
 				user_id: ""
-			}
+			},
+
+			postById: {}
 		},
 		actions: {
+			// Get Post by ID
+			getPostById: async () => {
+				//get the store
+				const store = getStore();
+			},
+
 			// Update the User ID to set new psw
 			setForgotPswdId: newId => {
 				//get the store
@@ -89,7 +97,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					redirect: "follow"
 				};
 
-				await fetch("https://3001-maroon-dingo-ll24z8zy.ws-us03.gitpod.io/api/getPost", requestOptions)
+				await fetch("https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/getPost", requestOptions)
 					.then(response => response.json())
 					.then(result => {
 						tmpArray = result;
