@@ -61,7 +61,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			posts: [],
 
-			forgotPswdId: 0
+			forgotPswdId: {
+				security_question: "",
+				user_id: ""
+			}
 		},
 		actions: {
 			// Update the User ID to set new psw

@@ -3,60 +3,65 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPILogin = "https://3001-bronze-mammal-ufowebr8.ws-us03.gitpod.io/api/login";
+const urlAPI = "https://3001-black-mole-w5tm1f7k.ws-us03.gitpod.io/api/updatepassword/";
 
 export const ResetPassword = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
+	const [password, setPassword] = useState("");
+	const [passwordConfirm, setPasswordConfirm] = useState("");
+	const [authentication, setAuth] = useState(false);
+	const [errorMsg, setErrorMsg] = useState("");
+	const [errorWindow, setErrorWindow] = useState(false);
 
-	console.log("Reset Password for User Id ", store.forgotPswdId);
+	// console.log("Reset Password for User Id ", store.forgotPswdId);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		let myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
+		if (password === "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese su contraseña");
+		} else if (passwordConfirm === "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese su confirmacion de la contraseña");
+		} else if (password != passwordConfirm) {
+			setErrorWindow(true);
+			setErrorMsg("Las contraseñas no coinciden");
+		} else {
+			let myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
 
-		let raw = JSON.stringify({
-			email: email,
-			password: password
-		});
+			let raw = JSON.stringify({
+				password: password
+			});
 
-		let requestOptions = {
-			method: "POST",
-			headers: myHeaders,
-			body: raw,
-			redirect: "follow"
-		};
+			let requestOptions = {
+				method: "POST",
+				headers: myHeaders,
+				body: raw,
+				redirect: "follow"
+			};
 
-		await fetch(urlAPILogin, requestOptions)
-			.then(response => response.text())
-			.then(result => {
-				result = JSON.parse(result);
-				if (result.token != undefined) {
-					sessionStorage.setItem("token", result.token);
-					console.log("Token guardado");
-					setAuth(true);
-				} else {
-					setErrorWindow(true);
-					setErrorMsg("Correo y/o contraseña inválidos");
-				}
-			})
-			.catch(error => console.log("error", error));
+			let url = urlAPI + store.forgotPswdId.user_id;
+
+			console.log(url);
+
+			let response = await fetch(url, requestOptions);
+			if (response.status != 200) {
+				setErrorWindow(true);
+				setErrorMsg("Error al actualizar la contraseña");
+			} else {
+				console.log("Contraseña actualizada");
+				setAuth(true);
+			}
+		}
 	};
 
 	const closeWindow = () => {
 		setErrorWindow(false);
 		setErrorMsg("");
 	};
-
-	// Variables to handle email, password
-	// const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [passwordConfirm, setPasswordConfirm] = useState("");
-	const [authentication, setAuth] = useState(false);
-	const [errorMsg, setErrorMsg] = useState("");
-	const [errorWindow, setErrorWindow] = useState(false);
 
 	return (
 		<div className="loginWindow">
@@ -77,9 +82,8 @@ export const ResetPassword = () => {
 						</button>
 					</div>
 				) : null}
-				<div className="container">
-					<h1 className="header">Reset Password</h1>
-
+				<div className="containerResetPassword">
+					<h1 className="header">Cambiar Contraseña</h1>
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
 							<span className="input-group-text" id="inputGroup-sizing-lg">
@@ -112,7 +116,7 @@ export const ResetPassword = () => {
 					</div>
 					<div style={{ marginBottom: "20px" }}>
 						<button type="submit" className="btn btn-light">
-							Submit
+							Guardar Contraseña
 						</button>
 					</div>
 
@@ -125,7 +129,7 @@ export const ResetPassword = () => {
 					</div>
 				</div>
 
-				{authentication ? <Redirect to="/perfil" /> : null}
+				{authentication ? <Redirect to="/login" /> : null}
 			</form>
 		</div>
 	);
