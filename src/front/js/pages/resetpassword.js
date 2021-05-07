@@ -3,60 +3,70 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPILogin = "https://3001-lavender-orangutan-dgcn67sy.ws-us03.gitpod.io//api/login";
+const urlAPI = "https://3001-rose-eagle-9sjuf117.ws-us03.gitpod.io/api/updatepassword";
 
 export const ResetPassword = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
+	const [password, setPassword] = useState("");
+	const [passwordConfirm, setPasswordConfirm] = useState("");
+	const [authentication, setAuth] = useState(false);
+	const [errorMsg, setErrorMsg] = useState("");
+	const [errorWindow, setErrorWindow] = useState(false);
 
-	console.log("Reset Password for User Id ", store.forgotPswdId);
+	// console.log("Reset Password for User Id ", store.forgotPswdId);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		let myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
+		if (!password || password === "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese su contraseña");
+		}
 
-		let raw = JSON.stringify({
-			email: email,
-			password: password
-		});
+		if (!passwordConfirm || passwordConfirm === "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese su confirmacion de la contraseña");
+		}
 
-		let requestOptions = {
-			method: "POST",
-			headers: myHeaders,
-			body: raw,
-			redirect: "follow"
-		};
+		if (typeof password != undefined && typeof confirm_password != undefined) {
+			if (password != confirm_password) {
+				setErrorWindow(true);
+				setErrorMsg("Las contraseñas no coinciden");
+			}
+		}
 
-		await fetch(urlAPILogin, requestOptions)
-			.then(response => response.text())
-			.then(result => {
-				result = JSON.parse(result);
-				if (result.token != undefined) {
-					sessionStorage.setItem("token", result.token);
-					console.log("Token guardado");
-					setAuth(true);
-				} else {
-					setErrorWindow(true);
-					setErrorMsg("Correo y/o contraseña inválidos");
-				}
-			})
-			.catch(error => console.log("error", error));
+		if (errorWindow === false) {
+			let myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
+
+			let raw = JSON.stringify({
+				email: email,
+				password: password
+			});
+
+			let requestOptions = {
+				method: "POST",
+				headers: myHeaders,
+				body: raw,
+				redirect: "follow"
+			};
+
+			let response = await fetch(urlAPI + store.forgotPswdId.user_id, requestOptions);
+			if (response.status != 200) {
+				setErrorWindow(true);
+				setErrorMsg("Error al actualizar la contraseña");
+			} else {
+				console.log("Contraseña actualizada");
+				setAuth(true);
+			}
+		}
 	};
 
 	const closeWindow = () => {
 		setErrorWindow(false);
 		setErrorMsg("");
 	};
-
-	// Variables to handle email, password
-	// const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [passwordConfirm, setPasswordConfirm] = useState("");
-	const [authentication, setAuth] = useState(false);
-	const [errorMsg, setErrorMsg] = useState("");
-	const [errorWindow, setErrorWindow] = useState(false);
 
 	return (
 		<div className="loginWindow">
@@ -124,7 +134,7 @@ export const ResetPassword = () => {
 					</div>
 				</div>
 
-				{authentication ? <Redirect to="/perfil" /> : null}
+				{authentication ? <Redirect to="/login" /> : null}
 			</form>
 		</div>
 	);

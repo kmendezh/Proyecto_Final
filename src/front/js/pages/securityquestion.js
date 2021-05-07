@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPI = "https://3001-lavender-orangutan-dgcn67sy.ws-us03.gitpod.io/api/postsecurityanswer";
+const urlAPI = "https://3001-rose-eagle-9sjuf117.ws-us03.gitpod.io/api/postsecurityanswer";
 
 export const SecurityQuestion = () => {
 	// Get Store
@@ -32,7 +32,7 @@ export const SecurityQuestion = () => {
 		await fetch(urlAPI, requestOptions)
 			.then(response => response.json())
 			.then(result => {
-				if (result.id != undefined) {
+				if (result.user_id != undefined) {
 					console.log("post_security_answer --> " + result);
 					console.log("se invoca a la vista resetpassword");
 					setAuth(true);
