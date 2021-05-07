@@ -40,8 +40,8 @@ def addNewPost():
     createdDate = createdDate.strftime("%d/%m/%Y %H:%M:%S")
     updatedDate = datetime.datetime.now()
     updatedDate = updatedDate.strftime("%d/%m/%Y %H:%M:%S")
-    total_comment = 0
-    total_like = 0
+    total_comment = 35
+    total_like = 35
     newPost = Post(created = createdDate, updated = updatedDate, title = request_body["title"], comment = request_body["comment"],\
         url = request_body["url"], provincia = request_body["provincia"], dificultad = request_body["dificultad"], duracion = request_body["duracion"],\
         total_comment = total_comment, total_like = total_like, iduser = user.id)

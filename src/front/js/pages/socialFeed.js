@@ -3,6 +3,8 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import { TourCard } from "../component/tourCard";
 import { func } from "prop-types";
+import { propTypes } from "react-bootstrap/esm/Image";
+import "../../styles/tourCard.css";
 
 export const SocialFeed = () => {
 	// Get Store
@@ -33,5 +35,15 @@ export const SocialFeed = () => {
 	// Render the element
 	cardsToDisplay = cardsToDisplay.map((element, index) => <TourCard key={element.id} cardInfo={element} />);
 
-	return <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>{cardsToDisplay}</div>;
+	return (
+		<div>
+			<div className="stateTitleContainer">
+				<h1 className="stateTitle">{statesNames[stateIndex]}</h1>
+			</div>
+
+			<div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: "700px" }}>
+				{cardsToDisplay}
+			</div>
+		</div>
+	);
 };

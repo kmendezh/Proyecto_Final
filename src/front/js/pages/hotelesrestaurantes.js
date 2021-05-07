@@ -12,57 +12,6 @@ export const Hoteles = () => {
 				</div>
 				<div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-1 pt-2">
 					<CardHotel
-<<<<<<< HEAD
-						link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmV4SyZpjhYeEV05a8kZFyVZ-UP9tcYlREdw&usqp=CAU"
-						title="Hotel DoubleTree by Hilton"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={35}
-					/>
-					<Rating />
-
-					<CardHotel
-						link="https://cf.bstatic.com/images/hotel/max1024x768/254/254480509.jpg"
-						title="Croc's Resort & Casino"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={10}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-=======
 						link="https://media.radissonhotelsamericas.com/image/park-inn-by-radisson-san-jose-costa-rica/exteriorview/20828-141062-f63771406_3xl.jpg?impolicy=CustomCrop&cwidth=670&cheight=603"
 						title="Park Inn by Radisson"
 						descripcion="A poca distancia del bullicioso centro de la ciudad, el Park Inn by Radisson San Jose, Costa Rica es una opción ideal tanto para viajeros de negocios como de placer."
@@ -132,7 +81,6 @@ export const Hoteles = () => {
 						desprecio="del almuerzo "
 						simbolo="$"
 						moneda={15}
->>>>>>> aef7d00bf39a572d77949ef2a6eeaab61783cc4f
 					/>
 				</div>
 			</div>
