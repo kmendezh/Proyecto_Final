@@ -82,8 +82,8 @@ export const ResetPassword = () => {
 						</button>
 					</div>
 				) : null}
-				<div className="container">
-					<h1 className="header">Reset Password</h1>
+				<div className="containerResetPassword">
+					<h1 className="header">Cambiar Contraseña</h1>
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
 							<span className="input-group-text" id="inputGroup-sizing-lg">
@@ -116,7 +116,7 @@ export const ResetPassword = () => {
 					</div>
 					<div style={{ marginBottom: "20px" }}>
 						<button type="submit" className="btn btn-light">
-							Submit
+							Guardar Contraseña
 						</button>
 					</div>
 

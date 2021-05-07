@@ -14,34 +14,38 @@ export const SecurityQuestion = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		let myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
+		if (securityanswer == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese la Respuesta de Seguridad");
+		} else {
+			let myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
 
-		let raw = JSON.stringify({
-			id: store.forgotPswdId.user_id,
-			security_answer: securityanswer
-		});
+			let raw = JSON.stringify({
+				id: store.forgotPswdId.user_id,
+				security_answer: securityanswer
+			});
 
-		let requestOptions = {
-			method: "POST",
-			headers: myHeaders,
-			body: raw,
-			redirect: "follow"
-		};
-		// console.log("Entramos a Handle Submit");
-		await fetch(urlAPI, requestOptions)
-			.then(response => response.json())
-			.then(result => {
-				if (result.user_id != undefined) {
-					console.log("post_security_answer --> " + result);
-					console.log("se invoca a la vista resetpassword");
-					setAuth(true);
-				} else {
-					setErrorWindow(true);
-					setErrorMsg("Respuesta de seguridad inválida");
-				}
-			})
-			.catch(error => console.log("error", error));
+			let requestOptions = {
+				method: "POST",
+				headers: myHeaders,
+				body: raw,
+				redirect: "follow"
+			};
+			// console.log("Entramos a Handle Submit");
+			await fetch(urlAPI, requestOptions)
+				.then(response => response.json())
+				.then(result => {
+					if (result.user_id != undefined) {
+						console.log("se invoca a la vista resetpassword");
+						setAuth(true);
+					} else {
+						setErrorWindow(true);
+						setErrorMsg("Respuesta de seguridad inválida");
+					}
+				})
+				.catch(error => console.log("error", error));
+		}
 	};
 
 	const closeWindow = () => {
@@ -110,7 +114,7 @@ export const SecurityQuestion = () => {
 
 					<div style={{ marginBottom: "20px" }}>
 						<button type="submit" className="btn btn-light">
-							Submit
+							Aceptar
 						</button>
 					</div>
 
