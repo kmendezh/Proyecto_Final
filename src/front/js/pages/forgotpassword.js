@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/login.css";
 import { Link, useParams, Redirect } from "react-router-dom";
 
-const urlAPILogin = "https://3001-bronze-mammal-ufowebr8.ws-us03.gitpod.io/api/postsecurityquestion";
+const urlAPILogin = "https://3001-black-mole-w5tm1f7k.ws-us03.gitpod.io/api/postsecurityquestion";
 
 export const ForgotPassword = () => {
 	// Get Store
@@ -12,35 +12,39 @@ export const ForgotPassword = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		let myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
+		if (email == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese el email");
+		} else {
+			let myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
 
-		let raw = JSON.stringify({
-			email: email
-		});
+			let raw = JSON.stringify({
+				email: email
+			});
 
-		let requestOptions = {
-			method: "POST",
-			headers: myHeaders,
-			body: raw,
-			redirect: "follow"
-		};
-		console.log("Entramos a Handle Submit");
+			let requestOptions = {
+				method: "POST",
+				headers: myHeaders,
+				body: raw,
+				redirect: "follow"
+			};
 
-		await fetch(urlAPILogin, requestOptions)
-			.then(response => response.json())
-			.then(result => {
-				console.log(result);
-				if (result.user_id != undefined) {
-					console.log("Obtuvo datos");
-					actions.setForgotPswdId(result.user_id);
-					setAuth(true);
-				} else {
-					setErrorWindow(true);
-					setErrorMsg("Correo y/o contraseña inválidos");
-				}
-			})
-			.catch(error => console.log("error", error));
+			await fetch(urlAPILogin, requestOptions)
+				.then(response => response.json())
+				.then(result => {
+					// console.log(result);
+					if (result.user_id != undefined) {
+						console.log("Obtuvo datos");
+						actions.setForgotPswdId(result);
+						setAuth(true);
+					} else {
+						setErrorWindow(true);
+						setErrorMsg("Correo y/o contraseña inválidos");
+					}
+				})
+				.catch(error => console.log("error", error));
+		}
 	};
 
 	const closeWindow = () => {
@@ -75,7 +79,7 @@ export const ForgotPassword = () => {
 					</div>
 				) : null}
 				<div className="containerForgot">
-					<h1 className="header"> Forgot Password</h1>
+					<h1 className="header"> Recuperar Contraseña</h1>
 
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
@@ -94,7 +98,7 @@ export const ForgotPassword = () => {
 					</div>
 					<div style={{ marginBottom: "20px" }}>
 						<button type="submit" className="btn btn-light">
-							Submit
+							Enviar
 						</button>
 					</div>
 					<div className="footer_login">
@@ -106,7 +110,7 @@ export const ForgotPassword = () => {
 					</div>
 				</div>
 
-				{authentication ? <Redirect to="/resetpassword" /> : null}
+				{authentication ? <Redirect to="/securityquestion" /> : null}
 			</form>
 		</div>
 	);

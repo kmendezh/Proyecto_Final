@@ -40,8 +40,8 @@ def addNewPost():
     createdDate = createdDate.strftime("%d/%m/%Y %H:%M:%S")
     updatedDate = datetime.datetime.now()
     updatedDate = updatedDate.strftime("%d/%m/%Y %H:%M:%S")
-    total_comment = 0
-    total_like = 0
+    total_comment = 35
+    total_like = 35
     newPost = Post(created = createdDate, updated = updatedDate, title = request_body["title"], comment = request_body["comment"],\
         url = request_body["url"], provincia = request_body["provincia"], dificultad = request_body["dificultad"], duracion = request_body["duracion"],\
         total_comment = total_comment, total_like = total_like, iduser = user.id)
@@ -158,12 +158,12 @@ def get_security_answer():
     iduser = request.json.get("id", None)
     security_answer = request.json.get("security_answer", None)
    
-    if securityanswer is None:
+    if security_answer is None:
         return jsonify({"msg": "No security_answer was provided"}), 400
     if iduser is None:
         return jsonify({"msg": "No id user was provided"}), 400
 
-    user = User.query.filter_by(id=id).first()
+    user = User.query.filter_by(id=iduser).first()
     result = check_password_hash(user.security_answer, security_answer)
     if user is None or result == False:
         # the user was not found on the database

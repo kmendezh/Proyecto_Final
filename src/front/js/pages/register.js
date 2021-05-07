@@ -3,8 +3,7 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-// const urlAPI = "https://proyecto-tours.herokuapp.com/api/register";
-const urlAPI = "https://3001-lavender-pike-jxeqhq0w.ws-us03.gitpod.io/api/register";
+const urlAPI = "https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/register";
 
 export const RegisterPage = () => {
 	// Get Store
