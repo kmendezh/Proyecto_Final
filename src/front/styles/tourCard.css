@@ -33,13 +33,11 @@
 
 .stars
 {
-    font-size: 30px;
     color: rgb(0, 255, 170);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: 27%;
     align-self: baseline;
-    margin-right: 20px;
+    margin-right: 60px;
 }
 
 .rateContainer
@@ -52,5 +50,37 @@
 {
     color: rgb(0, 143, 131);
     font-family: "Abel";
+    align-self: baseline;
+    align-self: end;
+}
+
+.stateTitleContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.stateTitle
+{
+    font-family: "Abel";
+    color: rgb(0, 87, 79);
+}
+
+.iconSocial
+{
+    color:rgb(0, 114, 167);
+    align-self: baseline;
+}
+
+.iconTour
+{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.buttonSocial
+{
     align-self: baseline;
 }
