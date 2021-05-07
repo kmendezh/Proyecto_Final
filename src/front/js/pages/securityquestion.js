@@ -1,26 +1,29 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/login.css";
 import { Link, useParams, Redirect } from "react-router-dom";
+import "../../styles/login.css";
 
-const urlAPILogin = "https://3001-black-mole-w5tm1f7k.ws-us03.gitpod.io/api/postsecurityquestion";
+const urlAPI = "https://3001-black-mole-w5tm1f7k.ws-us03.gitpod.io/api/postsecurityanswer";
 
-export const ForgotPassword = () => {
+export const SecurityQuestion = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
+
+	// console.log("Reset Password for User Id ", store.forgotPswdId);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		if (email == "") {
+		if (securityanswer == "") {
 			setErrorWindow(true);
-			setErrorMsg("Por favor ingrese el email");
+			setErrorMsg("Por favor ingrese la Respuesta de Seguridad");
 		} else {
 			let myHeaders = new Headers();
 			myHeaders.append("Content-Type", "application/json");
 
 			let raw = JSON.stringify({
-				email: email
+				id: store.forgotPswdId.user_id,
+				security_answer: securityanswer
 			});
 
 			let requestOptions = {
@@ -29,18 +32,16 @@ export const ForgotPassword = () => {
 				body: raw,
 				redirect: "follow"
 			};
-
-			await fetch(urlAPILogin, requestOptions)
+			// console.log("Entramos a Handle Submit");
+			await fetch(urlAPI, requestOptions)
 				.then(response => response.json())
 				.then(result => {
-					// console.log(result);
 					if (result.user_id != undefined) {
-						console.log("Obtuvo datos");
-						actions.setForgotPswdId(result);
+						console.log("se invoca a la vista resetpassword");
 						setAuth(true);
 					} else {
 						setErrorWindow(true);
-						setErrorMsg("Correo y/o contraseña inválidos");
+						setErrorMsg("Respuesta de seguridad inválida");
 					}
 				})
 				.catch(error => console.log("error", error));
@@ -53,8 +54,7 @@ export const ForgotPassword = () => {
 	};
 
 	// Variables to handle email, password
-	const [email, setEmail] = useState("");
-	// const [password, setPassword] = useState("");
+	const [securityanswer, setSecurityAnswer] = useState("");
 	const [authentication, setAuth] = useState(false);
 	const [errorMsg, setErrorMsg] = useState("");
 	const [errorWindow, setErrorWindow] = useState(false);
@@ -78,29 +78,46 @@ export const ForgotPassword = () => {
 						</button>
 					</div>
 				) : null}
-				<div className="containerForgot">
-					<h1 className="header"> Recuperar Contraseña</h1>
-
+				<div className="containerSecurity">
+					<h1 className="header">Pregunta de Seguridad</h1>
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
 							<span className="input-group-text" id="inputGroup-sizing-lg">
-								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-address-book" />
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
 							</span>
 						</div>
 						<input
-							onChange={e => setEmail(e.target.value)}
+							defaultValue={store.forgotPswdId.security_question}
 							type="text"
 							className="form-control"
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Correo"
+							disabled="disabled"
 						/>
 					</div>
+
+					<div className="input-group input-group-lg userInput">
+						<div className="input-group-prepend">
+							<span className="input-group-text" id="inputGroup-sizing-lg">
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
+							</span>
+						</div>
+						<input
+							onChange={e => setSecurityAnswer(e.target.value)}
+							type="text"
+							className="form-control"
+							aria-label="Large"
+							aria-describedby="inputGroup-sizing-sm"
+							placeholder="Respuesta de seguridad"
+						/>
+					</div>
+
 					<div style={{ marginBottom: "20px" }}>
 						<button type="submit" className="btn btn-light">
-							Enviar
+							Aceptar
 						</button>
 					</div>
+
 					<div className="footer_login">
 						¿Ya tienes cuenta?
 						<Link to={"/login"} style={{ color: "white", paddingLeft: "2px" }}>
@@ -110,7 +127,7 @@ export const ForgotPassword = () => {
 					</div>
 				</div>
 
-				{authentication ? <Redirect to="/securityquestion" /> : null}
+				{authentication ? <Redirect to="/resetpassword" /> : null}
 			</form>
 		</div>
 	);

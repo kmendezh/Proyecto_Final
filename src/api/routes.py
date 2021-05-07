@@ -158,12 +158,12 @@ def get_security_answer():
     iduser = request.json.get("id", None)
     security_answer = request.json.get("security_answer", None)
    
-    if securityanswer is None:
+    if security_answer is None:
         return jsonify({"msg": "No security_answer was provided"}), 400
     if iduser is None:
         return jsonify({"msg": "No id user was provided"}), 400
 
-    user = User.query.filter_by(id=id).first()
+    user = User.query.filter_by(id=iduser).first()
     result = check_password_hash(user.security_answer, security_answer)
     if user is None or result == False:
         # the user was not found on the database
