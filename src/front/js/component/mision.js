@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import { func } from "prop-types";
 import "../../styles/mision.css";
 
 // Function to print the cards that explain how the website works
