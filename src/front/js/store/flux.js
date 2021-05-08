@@ -77,6 +77,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				let tmpObj = store.credentials;
 				let auth = "Bearer " + sessionStorage.getItem("token");
+				console.log("Token:", auth);
 				const urlAPI = "https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/getCredentials";
 
 				let myHeaders = new Headers();
@@ -89,8 +90,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 
 				await fetch(urlAPI, requestOptions)
-					.then(response => response.text())
+					.then(response => response.json())
 					.then(result => {
+						console.log("Result:", result);
 						tmpObj = result;
 					})
 					.catch(error => console.log("error", error));
