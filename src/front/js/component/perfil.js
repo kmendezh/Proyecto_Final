@@ -3,8 +3,18 @@ import { Container, Image, Col, Row, Dropdown, Form, Jumbotron } from "react-boo
 import { FcCameraIdentification } from "react-icons/fc";
 import "../../styles/perfil.css";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { useContext, useState, useEffect } from "react";
 
 export function Perfil() {
+	// Get Store
+	const { store, actions } = useContext(Context);
+
+	useEffect(() => {
+		actions.getCredentials();
+		console.log("Credentials", store.credentials);
+	}, []);
+
 	return (
 		<div className="container-fluid perfilview">
 			<div className="row">
@@ -17,17 +27,17 @@ export function Perfil() {
 							rounded
 						/>
 						<h3>
-							<strong>Yeison Diaz</strong>
+							<strong>{store.credentials.username}</strong>
 						</h3>
 					</div>
 					<div>
 						<h4>Datos personal</h4>
 						<h4>
-							<i className="fas fa-user"></i> Yeison Diaz
+							<i className="fas fa-user"></i> {store.credentials.username}
 						</h4>
 						<h4>
 							{" "}
-							<i className="fas fa-envelope"></i> fake@gmail.com
+							<i className="fas fa-envelope"></i> {store.credentials.email}
 						</h4>
 						<h4>
 							<i className="fas fa-map-marked"></i> Publicaciones:9

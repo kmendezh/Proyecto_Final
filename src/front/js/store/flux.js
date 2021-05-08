@@ -66,13 +66,66 @@ const getState = ({ getStore, getActions, setStore }) => {
 				user_id: ""
 			},
 
-			postById: {}
+			postById: {},
+
+			credentials: {}
 		},
 		actions: {
-			// Get Post by ID
-			getPostById: async () => {
+			// Get the credentials of the user registered
+			getCredentials: async () => {
 				//get the store
 				const store = getStore();
+				let tmpObj = store.credentials;
+				let auth = "Bearer " + sessionStorage.getItem("token");
+				console.log("Token:", auth);
+				const urlAPI = "https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/getCredentials";
+
+				let myHeaders = new Headers();
+				myHeaders.append("Authorization", auth);
+
+				let requestOptions = {
+					method: "POST",
+					headers: myHeaders,
+					redirect: "follow"
+				};
+
+				await fetch(urlAPI, requestOptions)
+					.then(response => response.json())
+					.then(result => {
+						console.log("Result:", result);
+						tmpObj = result;
+					})
+					.catch(error => console.log("error", error));
+
+				//reset the global store
+				setStore({ credentials: tmpObj });
+			},
+
+			// Get the Post by the id
+			getPostById: async id => {
+				//get the store
+				const store = getStore();
+				let tmpObj = store.postById;
+
+				// URL API
+				const urlAPI = "https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/getPostById/";
+				let tmpUrl = urlAPI + id.toString();
+
+				let requestOptions = {
+					method: "GET",
+					redirect: "follow"
+				};
+
+				await fetch(tmpUrl, requestOptions)
+					.then(response => response.json())
+					.then(result => {
+						tmpObj = result;
+						console.log("Post by Id:", tmpObj);
+					})
+					.catch(error => console.log("error", error));
+
+				//reset the global store
+				setStore({ postById: tmpObj });
 			},
 
 			// Update the User ID to set new psw

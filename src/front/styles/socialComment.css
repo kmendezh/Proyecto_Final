@@ -3,12 +3,13 @@
 .socialCommentContainer
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 50px;
     margin-bottom: 50px;
     width: 40%;
     height: 900px;
     justify-content: center;
+    margin-left: 700px;
 
 }
 
@@ -21,5 +22,6 @@
 .socialCommentText
 {
     font-family: "Abel";
+    margin-top: 10px;
 }
 
