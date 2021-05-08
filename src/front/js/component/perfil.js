@@ -4,7 +4,6 @@ import { FcCameraIdentification } from "react-icons/fc";
 import "../../styles/perfil.css";
 import { Link } from "react-router-dom";
 
-
 export function Perfil() {
 	return (
 		<div className="container-fluid perfilview">

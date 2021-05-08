@@ -51,6 +51,19 @@ def addNewPost():
 
     return jsonify('Nuevo Post publicado'), 200
 
+@api.route('/getCredentials', methods=['POST'])
+@jwt_required()
+def getCredentials():
+
+    # Obtener el ID del usuario registrado get_jwt_identity
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+
+    if user is None:
+        raise APIException('Usuario no registrado', status_code=420)
+
+    userReq = user.serialize()
+    return jsonify(userReq), 200
 
 ####################################################################
 # Ruta de prueba para ver los usuarios registrados
@@ -72,6 +85,17 @@ def getPost():
     posts = list(map(lambda x: x.serialize(), post_query))
 
     return jsonify(posts), 200
+
+@api.route('/getPostById/<int:id>', methods=['GET'])
+def getPostById(id):
+
+    post = Post.query.get(id)
+
+    if post is None:
+        raise APIException('Post no encontrado', status_code=420)
+
+    postReq = post.serialize()
+    return jsonify(postReq), 200
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
