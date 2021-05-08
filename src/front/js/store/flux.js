@@ -148,7 +148,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					redirect: "follow"
 				};
 
-				await fetch("https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/getPost", requestOptions)
+				await fetch("https://3001-crimson-dragon-kj8uyl82.ws-us03.gitpod.io/api/getPost", requestOptions)
 					.then(response => response.json())
 					.then(result => {
 						tmpArray = result;

@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPI = "https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/register";
+const urlAPI = "https://3001-crimson-dragon-kj8uyl82.ws-us03.gitpod.io/api/register";
 
 export const RegisterPage = () => {
 	// Get Store
@@ -12,37 +12,54 @@ export const RegisterPage = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		let myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
-
-		let raw = JSON.stringify({
-			email: email,
-			password: password,
-			username: userName,
-			is_active: false,
-			security_question: securityquestion,
-			security_answer: securityanswer
-		});
-
-		let requestOptions = {
-			method: "POST",
-			headers: myHeaders,
-			body: raw,
-			redirect: "follow"
-		};
-
-		let response = await fetch(urlAPI, requestOptions);
-		if (response.status != 200) {
-			console.log("No Registrado", response);
+		if (email == "") {
 			setErrorWindow(true);
-			if (response.status == 409) {
-				setErrorMsg("El correo ya se encuentra registrado");
-			} else if (response.status == 410) {
-				setErrorMsg("El nombre de usuario ya se encuentra registrado");
-			}
+			setErrorMsg("Por favor ingrese el correo");
+		} else if (userName == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese el nombre de usuario");
+		} else if (password == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese la contraseña");
+		} else if (securityquestion == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese la Pregunta de seguridad");
+		} else if (securityanswer == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese la Respuesta de seguridad");
 		} else {
-			console.log("Registrado");
-			setAuth(true);
+			let myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
+
+			let raw = JSON.stringify({
+				email: email,
+				password: password,
+				username: userName,
+				is_active: true,
+				security_question: securityquestion,
+				security_answer: securityanswer
+			});
+
+			let requestOptions = {
+				method: "POST",
+				headers: myHeaders,
+				body: raw,
+				redirect: "follow"
+			};
+
+			let response = await fetch(urlAPI, requestOptions);
+			if (response.status != 200) {
+				console.log("No Registrado", response);
+				setErrorWindow(true);
+				if (response.status == 409) {
+					setErrorMsg("El correo ya se encuentra registrado");
+				} else if (response.status == 410) {
+					setErrorMsg("El nombre de usuario ya se encuentra registrado");
+				}
+			} else {
+				console.log("Registrado");
+				setAuth(true);
+			}
 		}
 	};
 
