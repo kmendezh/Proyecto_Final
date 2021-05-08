@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
-const urlAPI = "https://3001-black-mole-w5tm1f7k.ws-us03.gitpod.io/api/updatepassword/";
+const urlAPI = "https://3001-crimson-dragon-kj8uyl82.ws-us03.gitpod.io/api/updatepassword/";
 
 export const ResetPassword = () => {
 	// Get Store
