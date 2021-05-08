@@ -12,12 +12,12 @@ export const Navbar = () => {
 			</div>
 			<div>
 				<Link to={"/social"} className="navItem">
-					Social <i className="fas fa-images" style={{ fontSize: "20px" }}></i>
+					Social <i className="fas fa-images" style={{ fontSize: "20px" }} />
 				</Link>
 			</div>
 			<div>
 				<Link to={"/hotelesrestaurantes"} className="navItem">
-					Hoteles y Restaurantes <i className="fas fa-hotel" style={{ fontSize: "20px" }}></i>
+					Hoteles y Restaurantes <i className="fas fa-hotel" style={{ fontSize: "20px" }} />
 				</Link>
 			</div>
 			<div>

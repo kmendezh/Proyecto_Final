@@ -16,7 +16,7 @@ export const SocialCardsState = prop => {
 				<h1>{prop.state}</h1>
 				<p>
 					{" "}
-					Min: {prop.tmpMin} ° C, Max: {prop.tmpMin} ° C, Clima <i className={prop.weather}></i>
+					Min: {prop.tmpMin} ° C, Max: {prop.tmpMin} ° C, Clima <i className={prop.weather} />
 				</p>
 			</div>
 		</div>
