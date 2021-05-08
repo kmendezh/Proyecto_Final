@@ -2,6 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
+import validator from "validator";
+
+//comando
+// npm install validator
 
 const urlAPI = "https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/register";
 
@@ -12,9 +16,9 @@ export const RegisterPage = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		if (email == "") {
+		if (!validator.isEmail(email)) {
 			setErrorWindow(true);
-			setErrorMsg("Por favor ingrese el correo");
+			setErrorMsg("Formato de correo invalido");
 		} else if (userName == "") {
 			setErrorWindow(true);
 			setErrorMsg("Por favor ingrese el nombre de usuario");

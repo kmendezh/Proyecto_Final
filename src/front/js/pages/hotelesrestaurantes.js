@@ -92,7 +92,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1280x900/261/261133695.jpg"
 						title="Hampton Inn & Suites"
-						descripcion="El Hampton Inn ofrece habitaciones modernas a sólo 1,5 km del aeropuerto internacional de San José. Cuenta con una gran piscina y un gimnasio, así como conexión Wi-Fi de cortesía y servicio gratuito de traslado al aeropuerto."
+						descripcion="El Hampton Inn ofrece habitaciones modernas a sólo 1,5 km del aeropuerto internacional de San José. Cuenta con una gran piscina y un gimnasio y servicio gratuito de traslado al aeropuerto."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
@@ -122,7 +122,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1280x900/168/16831736.jpg"
 						title="Xandari Resort & Spa"
-						descripcion="El Xandari Resort, ubicado en medio de un bosque tropical, ofrece excelentes vistas a la montaña, una zona de spa, clases de yoga, piscinas al aire libre y bañeras de hidromasaje. Se encuentra a 4 km de senderos naturales."
+						descripcion="Ubicado en medio de un bosque tropical, ofrece excelentes vistas a la montaña, una zona de spa, clases de yoga, piscinas al aire libre y bañeras de hidromasaje. Se encuentra a 4 km de senderos naturales."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
@@ -132,7 +132,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1280x900/172/172313624.jpg"
 						title="Lost Iguana Resort and Spa"
-						descripcion="El Lost Iguana Resort and Spa cuenta con piscina al aire libre, gimnasio y exuberantes jardines con un laberinto. Las habitaciones tienen vistas al volcán Arenal, situado a solo 25 minutos en coche."
+						descripcion="El Lost Iguana Resort and Spa cuenta con piscina al aire libre, gimnasio y exuberantes jardines con un laberinto."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
@@ -142,7 +142,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1280x900/427/42748733.jpg"
 						title="Volcano Lodge"
-						descripcion="El Volcano Lodge, Hotel & Thermal Experience está ubicado entre jardines tropicales exuberantes, a los pies del volcán Arenal de Costa Rica, y ofrece piscina al aire libre y una zona con WiFi gratuita. Las habitaciones tienen aire acondicionado y terraza."
+						descripcion="El Volcano Lodge, Hotel & Thermal Experience está ubicado entre jardines tropicales exuberantes, a los pies del volcán Arenal de Costa Rica, y ofrece piscina al aire libre."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
@@ -152,7 +152,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1024x768/204/204733619.jpg"
 						title="Tabacón Thermal Resort & Spa"
-						descripcion="El Tabacón Thermal Resort & Spa, situado a 15 minutos en coche del parque nacional Volcán Arenal, ofrece baños termales, sauna, servicio de masajes, tratamientos spa de lujo y 5 piscinas."
+						descripcion="El Tabacón Thermal Resort & Spa, situado a 15 minutos en coche del parque nacional Volcán Arenal."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "

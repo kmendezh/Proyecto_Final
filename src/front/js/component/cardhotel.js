@@ -8,17 +8,19 @@ const CardHotel = props => {
 		<div className="col-2 m-1 p-0">
 			<div className="card ml-2">
 				<img className="card-img-top foto" src={props.link} alt="Card image cap" />
-				<div className="card-body cardText">
+				<div className="card-body cardText cardBody">
 					<div>
 						<div>
-							<h5 className="card-title">{props.title} </h5>
+							<h5 className="card-title">
+								<strong>{props.title} </strong>{" "}
+							</h5>
 						</div>
 						<div className="d-flex flex-column p-0">
-							<p className="card-text">{props.descripcion}</p>
-							<p className="p-0">
+							<p className="cardText">{props.descripcion}</p>
+							<p className="p-0 cardText">
 								Descuentos desde {props.descuento1} % hasta {props.descuento2} %
 							</p>
-							<p>
+							<p className="p-0 cardText">
 								Precio {props.desprecio} {props.simbolo}
 								{props.moneda}
 							</p>
