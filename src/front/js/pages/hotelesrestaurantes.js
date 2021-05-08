@@ -244,12 +244,16 @@ export const Hoteles = () => {
 				</div>
 				<div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-1 pt-2">
 					<CardHotel
-						link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmV4SyZpjhYeEV05a8kZFyVZ-UP9tcYlREdw&usqp=CAU"
-						title="Hotel DoubleTree by Hilton"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://www.bing.com/th?id=A%252fvhxeHZ0q8Cpxg480x360&w=205&h=180&c=8&rs=1&pid=3.1&rm=2"
+						title="Cariari Bed & Breakfast"
+						descripcion="Para aquellos que visiten Heredia, Cariari Bed & Breakfast es una magnífica 
+                        elección para descansar. Conocido por su ambiente romántico y su proximidad a 
+                        fantásticos restaurantes."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1024x768/254/254480509.jpg"
