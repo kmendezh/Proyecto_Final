@@ -45,7 +45,7 @@ border-radius: 3px;
 
  .menuizquierda{
      background-color: gray;
-     height: 600px;
+     height: 1000px;
      width: 15%;
  }
  .menuizquierda img{
@@ -70,7 +70,7 @@ border-radius: 3px;
 
 
  .perfilview{
-     background-color: rgba(43, 12, 12, 0.137);
+     /* background-color: rgba(43, 12, 12, 0.137); */
  }
 
  .fotoynombre{
@@ -100,3 +100,6 @@ border-radius: 3px;
     border-bottom-style: double;
     border-top-style: double;
     border-color: #06BFAA; }
+
+
+   
