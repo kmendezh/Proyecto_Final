@@ -12,53 +12,6 @@ export const Hoteles = () => {
 				</div>
 				<div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-1 pt-2">
 					<CardHotel
-<<<<<<< HEAD
-						link="https://cf.bstatic.com/xdata/images/hotel/square200/156739129.jpg?k=5003fd3ad81747fc66f8526467b26b4d2d968a96291c67cf9f720a0f864f7a62&o="
-						title="Hotel El Autentico"
-						descripcion="El Auténtico Hotel se encuentra en San José, a 500 metros del Museo de Arte de Costa Rica, y cuenta con piscina al aire libre y restaurante. La conexión WiFi es gratuita."
-						descuento={35}
-					/>
-					<CardHotel
-						link="https://cf.bstatic.com/xdata/images/hotel/square200/232825530.jpg?k=64fabeac5582c422aa26989800375a1126aa0bc2e42512dd185fb0c40a7c1f3c&o="
-						title="Hotel Radisson"
-						descripcion="Este hotel elegante alberga piscina al aire libre, piscina cubierta climatizada y centro de conferencias. Sus habitaciones son amplias e incluyen conexión WiFi gratuita y soporte para iPod."
-						descuento={10}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento={15}
-=======
 						link="https://media.radissonhotelsamericas.com/image/park-inn-by-radisson-san-jose-costa-rica/exteriorview/20828-141062-f63771406_3xl.jpg?impolicy=CustomCrop&cwidth=670&cheight=603"
 						title="Park Inn by Radisson"
 						descripcion="A poca distancia del bullicioso centro de la ciudad, el Park Inn by Radisson San Jose, Costa Rica es una opción ideal tanto para viajeros de negocios como de placer."
@@ -128,7 +81,6 @@ export const Hoteles = () => {
 						desprecio="del almuerzo "
 						simbolo="$"
 						moneda={15}
->>>>>>> bcc9734a9eb9a9559c8827b009bf31488edbea4e
 					/>
 				</div>
 			</div>
@@ -140,7 +92,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1280x900/261/261133695.jpg"
 						title="Hampton Inn & Suites"
-						descripcion="El Hampton Inn ofrece habitaciones modernas a sólo 1,5 km del aeropuerto internacional de San José. Cuenta con una gran piscina y un gimnasio y servicio gratuito de traslado al aeropuerto."
+						descripcion="El Hampton Inn ofrece habitaciones modernas a sólo 1,5 km del aeropuerto internacional de San José. Cuenta con una gran piscina y un gimnasio, así como conexión Wi-Fi de cortesía y servicio gratuito de traslado al aeropuerto."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
@@ -170,7 +122,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1280x900/168/16831736.jpg"
 						title="Xandari Resort & Spa"
-						descripcion="Ubicado en medio de un bosque tropical, ofrece excelentes vistas a la montaña, una zona de spa, clases de yoga, piscinas al aire libre y bañeras de hidromasaje. Se encuentra a 4 km de senderos naturales."
+						descripcion="El Xandari Resort, ubicado en medio de un bosque tropical, ofrece excelentes vistas a la montaña, una zona de spa, clases de yoga, piscinas al aire libre y bañeras de hidromasaje. Se encuentra a 4 km de senderos naturales."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
@@ -180,7 +132,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1280x900/172/172313624.jpg"
 						title="Lost Iguana Resort and Spa"
-						descripcion="El Lost Iguana Resort and Spa cuenta con piscina al aire libre, gimnasio y exuberantes jardines con un laberinto."
+						descripcion="El Lost Iguana Resort and Spa cuenta con piscina al aire libre, gimnasio y exuberantes jardines con un laberinto. Las habitaciones tienen vistas al volcán Arenal, situado a solo 25 minutos en coche."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
@@ -190,7 +142,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1280x900/427/42748733.jpg"
 						title="Volcano Lodge"
-						descripcion="El Volcano Lodge, Hotel & Thermal Experience está ubicado entre jardines tropicales exuberantes, a los pies del volcán Arenal de Costa Rica, y ofrece piscina al aire libre."
+						descripcion="El Volcano Lodge, Hotel & Thermal Experience está ubicado entre jardines tropicales exuberantes, a los pies del volcán Arenal de Costa Rica, y ofrece piscina al aire libre y una zona con WiFi gratuita. Las habitaciones tienen aire acondicionado y terraza."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
@@ -200,7 +152,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1024x768/204/204733619.jpg"
 						title="Tabacón Thermal Resort & Spa"
-						descripcion="El Tabacón Thermal Resort & Spa, situado a 15 minutos en coche del parque nacional Volcán Arenal."
+						descripcion="El Tabacón Thermal Resort & Spa, situado a 15 minutos en coche del parque nacional Volcán Arenal, ofrece baños termales, sauna, servicio de masajes, tratamientos spa de lujo y 5 piscinas."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
