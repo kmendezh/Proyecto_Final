@@ -244,60 +244,81 @@ export const Hoteles = () => {
 				</div>
 				<div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-1 pt-2">
 					<CardHotel
-						link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmV4SyZpjhYeEV05a8kZFyVZ-UP9tcYlREdw&usqp=CAU"
-						title="Hotel DoubleTree by Hilton"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://www.bing.com/th?id=A%252fvhxeHZ0q8Cpxg480x360&w=205&h=180&c=8&rs=1&pid=3.1&rm=2"
+						title="Cariari Bed & Breakfast"
+						descripcion="Para aquellos que visiten Heredia, Cariari Bed & Breakfast es una magnífica 
+                        elección para descansar. Conocido por su ambiente romántico y su proximidad a 
+                        fantásticos restaurantes."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 					<CardHotel
-						link="https://cf.bstatic.com/images/hotel/max1024x768/254/254480509.jpg"
-						title="Croc's Resort & Casino"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/79188373.jpg?k=706cd00840e7524d6b8f66a19e04bfca8d3f4c044dc4c563545b5f8bae0915c1&o="
+						title="Casa Familiar La Tortuga"
+						descripcion="Las habitaciones de Casa Familiar La Tortuga incluyen televisor de pantalla plana para una comodidad mucho mayor,
+                         y los huéspedes pueden permanecer conectados con wifi gratuito."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/35319763.jpg?k=39cdb4b7692c9f8282f1cb4604532206e818707cd7aae3adc3f1bc1732a250ba&o="
+						title="Casa Tropical"
+						descripcion="La Casa Tropical se encuentra en 1ª línea de playa, dentro de la 
+                        urbanización Costambar y a 5 minutos en coche del centro de Puerto Plata, y 
+                        alberga una piscina exterior."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://cf.bstatic.com/xdata/images/hotel/square200/289525820.jpg?k=307ac5dc537457dd58f60b7f27ab1690fca0ae103ef62237af748163030471a6&o="
+						title="Cibeles Resort"
+						descripcion="El Hotel Cibeles Resort se encuentra en Heredia, a 2,1 km del Britt Coffee Tour, y ofrece alojamiento con piscina al aire libre, aparcamiento privado gratuito y jardín."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://aff.bstatic.com/images/hotel/max500/924/92424435.jpg"
+						title="Cypress Hills"
+						descripcion="El establecimiento Vistas del Tirol admite animales de compañía y se encuentra en Heredia. 
+                        Facilita aparcamiento privado gratuito y WiFi gratuita en todo el recinto. Las habitaciones tienen TV de pantalla plana.."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habiación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://www.gavilanlodge.com/wp-content/uploads/2020/11/Hotel-Gavilan-Lodge-Sarapiqui-4.jpg"
+						title="Gavilan Sarapiqui River Lodge"
+						descripcion="El Gran Gavilán del Sarapiquí Lodge se encuentra en Sarapiquí y ofrece WiFi gratuita,
+                        restaurante, salón compartido y jardín. El lodge sirve un desayuno continental o vegano."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habiación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://cf.bstatic.com/xdata/images/hotel/square200/117184366.jpg?k=fa9446123c01d8a0fbe8a5499b6b3686041e02be6e974c7b47d360b8a4f6f60f&o="
+						title="Finca Rosa Blanca"
+						descripcion="La Finca Rosa Blanca Coffee Farm and Inn se encuentra en Heredia, a 2,6 km del estadio Carlos Alvarado, y ofrece alojamiento con restaurante, aparcamiento privado gratuito, piscina al aire libre y..."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 				</div>
 			</div>
