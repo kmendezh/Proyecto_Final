@@ -2,11 +2,13 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-class User(db.Model):
+class User(db.Model): 
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     username = db.Column(db.String(200), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
+    password = db.Column(db.String(500), unique=False, nullable=False)
+    security_question = db.Column(db.String(200), unique=False, nullable=False)
+    security_answer = db.Column(db.String(500), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
     def __repr__(self):
@@ -16,7 +18,9 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
-            "username": self.username
+            "username": self.username,
+            "security_answer": self.security_answer,
+            "security_question": self.security_question
             # do not serialize the password, its a security breach
         }
 class Post(db.Model):
@@ -27,6 +31,8 @@ class Post(db.Model):
     comment = db.Column(db.String(300), nullable=False)
     url = db.Column(db.String(300), nullable=False)
     provincia = db.Column(db.String(30), nullable=False)
+    dificultad = db.Column(db.String(30), nullable=False)
+    duracion = db.Column(db.Integer, nullable=False)
     total_comment = db.Column(db.Integer, nullable=False)
     total_like = db.Column(db.Integer, nullable=False)
     iduser = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -44,10 +50,13 @@ class Post(db.Model):
             "comment": self.comment,
             "url": self.url,
             "provincia": self.provincia,
+            "dificultad": self.dificultad,
+            "duracion": self.duracion,
             "total_comment": self.total_comment,
             "total_like": self.total_like,
             "iduser": self.iduser
         }
+        
 class Post_like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime, nullable=False)

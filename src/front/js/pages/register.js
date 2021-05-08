@@ -2,8 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
+import validator from "validator";
 
-const urlAPI = "https://3001-fuchsia-guan-ei0d85u3.ws-us03.gitpod.io/api/register";
+//comando
+// npm install validator
+
+const urlAPI = "https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/register";
 
 export const RegisterPage = () => {
 	// Get Store
@@ -12,35 +16,54 @@ export const RegisterPage = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		let myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
-
-		let raw = JSON.stringify({
-			email: email,
-			password: password,
-			username: userName,
-			is_active: false
-		});
-
-		let requestOptions = {
-			method: "POST",
-			headers: myHeaders,
-			body: raw,
-			redirect: "follow"
-		};
-
-		let response = await fetch(urlAPI, requestOptions);
-		if (response.status != 200) {
-			console.log("No Registrado", response);
+		if (!validator.isEmail(email)) {
 			setErrorWindow(true);
-			if (response.status == 409) {
-				setErrorMsg("El correo ya se encuentra registrado");
-			} else if (response.status == 410) {
-				setErrorMsg("El nombre de usuario ya se encuentra registrado");
-			}
+			setErrorMsg("Formato de correo invalido");
+		} else if (userName == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese el nombre de usuario");
+		} else if (password == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese la contraseña");
+		} else if (securityquestion == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese la Pregunta de seguridad");
+		} else if (securityanswer == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese la Respuesta de seguridad");
 		} else {
-			console.log("Registrado");
-			setAuth(true);
+			let myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
+
+			let raw = JSON.stringify({
+				email: email,
+				password: password,
+				username: userName,
+				is_active: true,
+				security_question: securityquestion,
+				security_answer: securityanswer
+			});
+
+			let requestOptions = {
+				method: "POST",
+				headers: myHeaders,
+				body: raw,
+				redirect: "follow"
+			};
+
+			let response = await fetch(urlAPI, requestOptions);
+			if (response.status != 200) {
+				console.log("No Registrado", response);
+				setErrorWindow(true);
+				if (response.status == 409) {
+					setErrorMsg("El correo ya se encuentra registrado");
+				} else if (response.status == 410) {
+					setErrorMsg("El nombre de usuario ya se encuentra registrado");
+				}
+			} else {
+				console.log("Registrado");
+				setAuth(true);
+			}
 		}
 	};
 
@@ -52,6 +75,8 @@ export const RegisterPage = () => {
 	// Variables to handle email, password
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [securityquestion, setSecurityquestion] = useState("");
+	const [securityanswer, setSecurityanswer] = useState("");
 	const [authentication, setAuth] = useState(false);
 	const [userName, setUserName] = useState("");
 	const [errorWindow, setErrorWindow] = useState(false);
@@ -124,6 +149,36 @@ export const RegisterPage = () => {
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
 							placeholder="Contraseña"
+						/>
+					</div>
+					<div className="input-group input-group-lg userInput">
+						<div className="input-group-prepend">
+							<span className="input-group-text" id="inputGroup-sizing-lg">
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
+							</span>
+						</div>
+						<input
+							onChange={e => setSecurityquestion(e.target.value)}
+							type="text"
+							className="form-control"
+							aria-label="Large"
+							aria-describedby="inputGroup-sizing-sm"
+							placeholder="Pregunta de seguridad"
+						/>
+					</div>
+					<div className="input-group input-group-lg userInput">
+						<div className="input-group-prepend">
+							<span className="input-group-text" id="inputGroup-sizing-lg">
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
+							</span>
+						</div>
+						<input
+							onChange={e => setSecurityanswer(e.target.value)}
+							type="text"
+							className="form-control"
+							aria-label="Large"
+							aria-describedby="inputGroup-sizing-sm"
+							placeholder="Respuesta de seguridad"
 						/>
 					</div>
 					<div style={{ marginBottom: "20px" }}>

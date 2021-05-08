@@ -8,21 +8,22 @@ const CardHotel = props => {
 		<div className="col-2 m-1 p-0">
 			<div className="card ml-2">
 				<img className="card-img-top foto" src={props.link} alt="Card image cap" />
-				<div className="card-body cardText">
+				<div className="card-body cardText cardBody">
 					<div>
 						<div>
-							<h5 className="card-title">{props.title} </h5>
+							<h5 className="card-title">
+								<strong>{props.title} </strong>{" "}
+							</h5>
 						</div>
 						<div className="d-flex flex-column p-0">
-							<p>{props.descripcion}</p>
-							<p className="p-0">Descuentos: {props.descuento} %</p>
-						</div>
-						<div className="d-flex justify-content-start">
-							<Link to={""}>
-								<button type="button" className="btn btn-outline-primary">
-									Ver mas
-								</button>
-							</Link>
+							<p className="cardText">{props.descripcion}</p>
+							<p className="p-0 cardText">
+								Descuentos desde {props.descuento1} % hasta {props.descuento2} %
+							</p>
+							<p className="p-0 cardText">
+								Precio {props.desprecio} {props.simbolo}
+								{props.moneda}
+							</p>
 						</div>
 					</div>
 				</div>
@@ -35,7 +36,11 @@ CardHotel.propTypes = {
 	link: PropTypes.string,
 	title: PropTypes.string,
 	descripcion: PropTypes.string,
-	descuento: PropTypes.number
+	descuento1: PropTypes.number,
+	descuento2: PropTypes.number,
+	simbolo: PropTypes.string,
+	desprecio: PropTypes.string,
+	moneda: PropTypes.number
 };
 
 export default CardHotel;

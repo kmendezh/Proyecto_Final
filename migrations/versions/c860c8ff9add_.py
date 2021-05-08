@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 8890c95478d5
+Revision ID: c860c8ff9add
 Revises: 
-Create Date: 2021-04-27 00:51:40.317149
+Create Date: 2021-05-08 20:50:21.895666
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '8890c95478d5'
+revision = 'c860c8ff9add'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,7 +22,9 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('email', sa.String(length=120), nullable=False),
     sa.Column('username', sa.String(length=200), nullable=False),
-    sa.Column('password', sa.String(length=80), nullable=False),
+    sa.Column('password', sa.String(length=500), nullable=False),
+    sa.Column('security_question', sa.String(length=200), nullable=False),
+    sa.Column('security_answer', sa.String(length=500), nullable=False),
     sa.Column('is_active', sa.Boolean(), nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email'),
@@ -36,6 +38,8 @@ def upgrade():
     sa.Column('comment', sa.String(length=300), nullable=False),
     sa.Column('url', sa.String(length=300), nullable=False),
     sa.Column('provincia', sa.String(length=30), nullable=False),
+    sa.Column('dificultad', sa.String(length=30), nullable=False),
+    sa.Column('duracion', sa.Integer(), nullable=False),
     sa.Column('total_comment', sa.Integer(), nullable=False),
     sa.Column('total_like', sa.Integer(), nullable=False),
     sa.Column('iduser', sa.Integer(), nullable=True),

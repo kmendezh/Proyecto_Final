@@ -14,6 +14,12 @@ import { Perfil } from "./component/perfil";
 import { RegisterPage } from "./pages/register";
 import { Hoteles } from "./pages/hotelesrestaurantes";
 import { SocialPage } from "./pages/social";
+import { ForgotPassword } from "./pages/forgotpassword";
+import { SecurityQuestion } from "./pages/securityquestion";
+import { ResetPassword } from "./pages/resetpassword";
+import { Contacts } from "./component/Contacts";
+import { SocialFeed } from "./pages/socialFeed";
+import { SocialComment } from "./pages/socialComments";
 
 //create your first component
 const Layout = () => {
@@ -36,11 +42,26 @@ const Layout = () => {
 						<Route exact path="/register">
 							<RegisterPage />
 						</Route>
+						<Route exact path="/forgotpassword">
+							<ForgotPassword />
+						</Route>
+						<Route exact path="/securityquestion">
+							<SecurityQuestion />
+						</Route>
+						<Route exact path="/resetpassword">
+							<ResetPassword />
+						</Route>
 						<Route exact path="/hotelesrestaurantes">
 							<Hoteles />
 						</Route>
 						<Route exact path="/social">
 							<SocialPage />
+						</Route>
+						<Route exact path="/socialFeed/:stateId">
+							<SocialFeed />
+						</Route>
+						<Route exact path="/socialComment/:postId">
+							<SocialComment />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
@@ -50,6 +71,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
+						</Route>
+						<Route exact path="/contact">
+							<Contacts />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

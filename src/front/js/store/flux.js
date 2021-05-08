@@ -57,9 +57,110 @@ const getState = ({ getStore, getActions, setStore }) => {
 					tempMax: "",
 					weather: ""
 				}
-			]
+			],
+
+			posts: [],
+
+			forgotPswdId: {
+				security_question: "",
+				user_id: ""
+			},
+
+			postById: {},
+
+			credentials: {}
 		},
 		actions: {
+			// Get the credentials of the user registered
+			getCredentials: async () => {
+				//get the store
+				const store = getStore();
+				let tmpObj = store.credentials;
+				let auth = "Bearer " + sessionStorage.getItem("token");
+				console.log("Token:", auth);
+				const urlAPI = "https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/getCredentials";
+
+				let myHeaders = new Headers();
+				myHeaders.append("Authorization", auth);
+
+				let requestOptions = {
+					method: "POST",
+					headers: myHeaders,
+					redirect: "follow"
+				};
+
+				await fetch(urlAPI, requestOptions)
+					.then(response => response.json())
+					.then(result => {
+						console.log("Result:", result);
+						tmpObj = result;
+					})
+					.catch(error => console.log("error", error));
+
+				//reset the global store
+				setStore({ credentials: tmpObj });
+			},
+
+			// Get the Post by the id
+			getPostById: async id => {
+				//get the store
+				const store = getStore();
+				let tmpObj = store.postById;
+
+				// URL API
+				const urlAPI = "https://3001-amber-beaver-fcvu2ore.ws-us03.gitpod.io/api/getPostById/";
+				let tmpUrl = urlAPI + id.toString();
+
+				let requestOptions = {
+					method: "GET",
+					redirect: "follow"
+				};
+
+				await fetch(tmpUrl, requestOptions)
+					.then(response => response.json())
+					.then(result => {
+						tmpObj = result;
+						console.log("Post by Id:", tmpObj);
+					})
+					.catch(error => console.log("error", error));
+
+				//reset the global store
+				setStore({ postById: tmpObj });
+			},
+
+			// Update the User ID to set new psw
+			setForgotPswdId: newId => {
+				//get the store
+				const store = getStore();
+				let tmp = store.forgotPswdId;
+				tmp = newId;
+
+				//reset the global store
+				setStore({ forgotPswdId: tmp });
+			},
+
+			// Get Posts
+			getPosts: async () => {
+				//get the store
+				const store = getStore();
+				let tmpArray = store.posts;
+				// Fetch - Get Posts
+				let requestOptions = {
+					method: "GET",
+					redirect: "follow"
+				};
+
+				await fetch("https://3001-crimson-dragon-kj8uyl82.ws-us03.gitpod.io/api/getPost", requestOptions)
+					.then(response => response.json())
+					.then(result => {
+						tmpArray = result;
+					})
+					.catch(error => console.log("error", error));
+
+				//reset the global store
+				setStore({ posts: tmpArray });
+			},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -108,7 +209,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const urlAPI = "https://community-open-weather-map.p.rapidapi.com/weather?";
 
 				let myHeaders = new Headers();
-				myHeaders.append("x-rapidapi-key", "acff19e957msh166faf91c033172p1358dbjsn5c9cbdd037f7");
+				myHeaders.append("x-rapidapi-key", "edbb58d21emsh8a7986768b328b5p1e89f0jsndade19458791");
 
 				let requestOptions = {
 					method: "GET",
