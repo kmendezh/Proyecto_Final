@@ -61,6 +61,7 @@ class Post_like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime, nullable=False)
     updated = db.Column(db.DateTime, nullable=False)
+    puntuacion = db.Column(db.Integer, nullable=False)
     idpost = db.Column(db.Integer, db.ForeignKey('post.id'))
     post = db.relationship(Post, foreign_keys=[idpost])
     iduser = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -75,8 +76,10 @@ class Post_like(db.Model):
             "created": self.created,
             "updated": self.updated,
             "idpost": self.idpost,
-            "iduser": self.iduser
+            "iduser": self.iduser,
+            "puntuacion": self.puntuacion
         }
+
 class Post_comments(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime, nullable=False)
