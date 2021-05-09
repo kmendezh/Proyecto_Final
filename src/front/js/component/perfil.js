@@ -64,32 +64,10 @@ export function Perfil() {
 					</div>
 					<div className="Col-9 publicaciones">
 						<div className="nuevopost d-flex justify-content-center">
-							<Dropdown>
-								<Dropdown.Toggle id="dropdown-basic">Nuevo post</Dropdown.Toggle>
-
-								<Dropdown.Menu>
-									<Dropdown.Item href="#/action-1">
-										<form>
-											<div className="row pt-5 mx-auto">
-												<div className="col-8 form-group mx-auto">
-													<input type="text" className="form-control" placeholder="URL" />
-												</div>
-												<div className="col-8 form-group  pt-2 mx-auto">
-													<input type="text" className="form-control" placeholder="Título" />
-												</div>
-												<div className="col-8 form-group  pt-2 mx-auto">
-													<input
-														type="text"
-														className="form-control"
-														placeholder="Duración"
-													/>
-												</div>
-												<div className="col-8 form-group  pt-2 mx-auto"></div>
-											</div>
-										</form>
-									</Dropdown.Item>
-								</Dropdown.Menu>
-							</Dropdown>
+							<Link to={"/newpost"} style={{ color: "white", paddingLeft: "2px" }}>
+								{""}
+								crear nuevo post
+							</Link>
 						</div>
 						<div className="arraydefotos">
 							<div className="col-2 m-1 p-0">
