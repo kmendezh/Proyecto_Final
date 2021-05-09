@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
 from flask_mail import Mail, Message
-from api.models import db, User, Post
+from api.models import db, User, Post, Post_like
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash, check_password_hash
 import datetime
@@ -35,7 +35,7 @@ def addNewPost():
         or request_body["dificultad"] is None or request_body["duracion"] is None):
         raise APIException('Request Body inválido. Uno o más parámetros están vacíos', status_code=400)
 
-    #Create the new entry
+    #Crear Nuevo Post
     createdDate = datetime.datetime.now()
     createdDate = createdDate.strftime("%d/%m/%Y %H:%M:%S")
     updatedDate = datetime.datetime.now()
@@ -47,10 +47,26 @@ def addNewPost():
         total_comment = total_comment, total_like = total_like, iduser = user.id)
 
     db.session.add(newPost)
-    db.session.commit()     
+    db.session.commit()  
+
+    tmpObj = newPost.serialize()
+
+    #Obtener Post Guardado 
+
+    # Guardar puntuacion inicial
+    createdDate = datetime.datetime.now()
+    createdDate = createdDate.strftime("%d/%m/%Y %H:%M:%S")
+    updatedDate = datetime.datetime.now()
+    updatedDate = updatedDate.strftime("%d/%m/%Y %H:%M:%S")
+    newPostLike = Post_like(created = createdDate, updated = updatedDate, puntuacion = 35, idpost = tmpObj["id"],\
+        iduser = user.id)
+
+    db.session.add(newPostLike)
+    db.session.commit()   
 
     return jsonify('Nuevo Post publicado'), 200
 
+# Get Credentials
 @api.route('/getCredentials', methods=['POST'])
 @jwt_required()
 def getCredentials():
@@ -64,6 +80,60 @@ def getCredentials():
 
     userReq = user.serialize()
     return jsonify(userReq), 200
+
+# Rate Post
+@api.route('/ratePost/<int:id>', methods=['POST'])
+@jwt_required()
+def ratePost(id):
+
+    # Obtener el ID del usuario registrado get_jwt_identity
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+
+    if user is None:
+        raise APIException('Usuario no registrado', status_code=420)
+
+    # Verificar si el request obtiene un campo valido
+    puntuacion = request.json.get("puntuacion", None)
+
+    if puntuacion is None:
+        raise APIException('Request invalido', status_code=421)
+
+    # Obtener el post seleccionado
+    selectedPost = Post.query.get(id)
+    if selectedPost is None:
+        raise APIException('No se encontro el Post', status_code=422)
+
+    # Guardar puntuacion
+    createdDate = datetime.datetime.now()
+    createdDate = createdDate.strftime("%d/%m/%Y %H:%M:%S")
+    updatedDate = datetime.datetime.now()
+    updatedDate = updatedDate.strftime("%d/%m/%Y %H:%M:%S")
+    newPostLike = Post_like(created = createdDate, updated = updatedDate, puntuacion = puntuacion, idpost = id,\
+        iduser = user.id)
+
+    db.session.add(newPostLike)
+    db.session.commit()   
+
+    # Actualizar rate
+
+    # Obtener todos los votos del post
+    votesPost = Post_like.query.filter_by(idpost=id)
+
+    # Se mapean los resultados
+    all_votes = list(map(lambda x: x.serialize(), votesPost))
+    average = 0
+    for votes in all_votes:
+        average = average + votes["puntuacion"]
+    average = int(average/len(all_votes))
+    print("Average")
+    print(average)
+
+    selectedPost.total_like = average
+    db.session.commit()
+    
+    return jsonify('Se actualizo la puntuacion'), 200
+
 
 ####################################################################
 # Ruta de prueba para ver los usuarios registrados
