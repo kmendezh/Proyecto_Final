@@ -7,41 +7,39 @@ import validator from "validator";
 //comando
 // npm install validator
 
-const urlAPI = "https://3001-cyan-butterfly-oxdmgid0.ws-us03.gitpod.io/api/register";
+const urlAPI = "https://3001-cyan-butterfly-oxdmgid0.ws-us03.gitpod.io/api/addNewPost";
 
-export const RegisterPage = () => {
+export const NewPost = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		if (!validator.isEmail(email)) {
+		if (title == "") {
 			setErrorWindow(true);
-			setErrorMsg("Formato de correo invalido");
-		} else if (userName == "") {
+			setErrorMsg("Por favor ingrese el titulo");
+		} else if (url == "") {
 			setErrorWindow(true);
-			setErrorMsg("Por favor ingrese el nombre de usuario");
-		} else if (password == "") {
+			setErrorMsg("Por favor ingrese la url");
+		} else if (provincia == "") {
 			setErrorWindow(true);
-			setErrorMsg("Por favor ingrese la contraseña");
-		} else if (securityquestion == "") {
+			setErrorMsg("Por favor ingrese la provincia");
+		} else if (dificultad == "") {
 			setErrorWindow(true);
-			setErrorMsg("Por favor ingrese la Pregunta de seguridad");
-		} else if (securityanswer == "") {
-			setErrorWindow(true);
-			setErrorMsg("Por favor ingrese la Respuesta de seguridad");
+			setErrorMsg("Por favor ingrese la dificultad");
 		} else {
 			let myHeaders = new Headers();
 			myHeaders.append("Content-Type", "application/json");
 
 			let raw = JSON.stringify({
-				email: email,
-				password: password,
-				username: userName,
+				title: title,
+				url: url,
+				provincia: provincia,
 				is_active: true,
-				security_question: securityquestion,
-				security_answer: securityanswer
+				dificultad: dificultad,
+				duracion: duracion,
+				comment: comment
 			});
 
 			let requestOptions = {
@@ -53,15 +51,13 @@ export const RegisterPage = () => {
 
 			let response = await fetch(urlAPI, requestOptions);
 			if (response.status != 200) {
-				console.log("No Registrado", response);
+				console.log("post no creado", response);
 				setErrorWindow(true);
-				if (response.status == 409) {
-					setErrorMsg("El correo ya se encuentra registrado");
-				} else if (response.status == 410) {
-					setErrorMsg("El nombre de usuario ya se encuentra registrado");
+				if (response.status == 400) {
+					setErrorMsg("Request Body inválido. Uno o más parámetros están vacíos");
 				}
 			} else {
-				console.log("Registrado");
+				console.log("creado");
 				setAuth(true);
 			}
 		}
@@ -73,17 +69,18 @@ export const RegisterPage = () => {
 	};
 
 	// Variables to handle email, password
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [securityquestion, setSecurityquestion] = useState("");
-	const [securityanswer, setSecurityanswer] = useState("");
+	const [title, setTitle] = useState("");
+	const [url, setUrl] = useState("");
+	const [provincia, setProvincia] = useState("");
+	const [dificultad, setDificultad] = useState("");
 	const [authentication, setAuth] = useState(false);
-	const [userName, setUserName] = useState("");
+	const [duracion, setDuracion] = useState("");
+	const [comment, setComment] = useState("");
 	const [errorWindow, setErrorWindow] = useState(false);
 	const [errorMsg, setErrorMsg] = useState("");
 
 	return (
-		<div className="loginWindow">
+		<div className="newpostwindow">
 			<form onSubmit={handleSubmit}>
 				{errorWindow ? (
 					<div
@@ -102,7 +99,7 @@ export const RegisterPage = () => {
 					</div>
 				) : null}
 				<div className="containerRegister">
-					<h1 className="header"> Regístrate </h1>
+					<h3 className="header"> Crear nuevo post </h3>
 
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
@@ -111,12 +108,12 @@ export const RegisterPage = () => {
 							</span>
 						</div>
 						<input
-							onChange={e => setEmail(e.target.value)}
+							onChange={e => setTitle(e.target.value)}
 							type="text"
 							className="form-control"
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Correo"
+							placeholder="Titulo"
 						/>
 					</div>
 
@@ -127,12 +124,12 @@ export const RegisterPage = () => {
 							</span>
 						</div>
 						<input
-							onChange={e => setUserName(e.target.value)}
+							onChange={e => setUrl(e.target.value)}
 							type="text"
 							className="form-control"
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Nombre de usuario"
+							placeholder="url"
 						/>
 					</div>
 
@@ -143,12 +140,12 @@ export const RegisterPage = () => {
 							</span>
 						</div>
 						<input
-							onChange={e => setPassword(e.target.value)}
+							onChange={e => setProvincia(e.target.value)}
 							type="password"
 							className="form-control"
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Contraseña"
+							placeholder="provincia"
 						/>
 					</div>
 					<div className="input-group input-group-lg userInput">
@@ -158,14 +155,15 @@ export const RegisterPage = () => {
 							</span>
 						</div>
 						<input
-							onChange={e => setSecurityquestion(e.target.value)}
+							onChange={e => setDificultad(e.target.value)}
 							type="text"
 							className="form-control"
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Pregunta de seguridad"
+							placeholder="dificultad"
 						/>
 					</div>
+
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
 							<span className="input-group-text" id="inputGroup-sizing-lg">
@@ -173,30 +171,38 @@ export const RegisterPage = () => {
 							</span>
 						</div>
 						<input
-							onChange={e => setSecurityanswer(e.target.value)}
+							onChange={e => setDuracion(e.target.value)}
 							type="text"
 							className="form-control"
 							aria-label="Large"
 							aria-describedby="inputGroup-sizing-sm"
-							placeholder="Respuesta de seguridad"
+							placeholder="duracion"
+						/>
+					</div>
+
+					<div className="input-group input-group-lg userInput">
+						<div className="input-group-prepend">
+							<span className="input-group-text" id="inputGroup-sizing-lg">
+								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
+							</span>
+						</div>
+						<input
+							onChange={e => setComment(e.target.value)}
+							type="text"
+							className="form-control"
+							aria-label="Large"
+							aria-describedby="inputGroup-sizing-sm"
+							placeholder="comment"
 						/>
 					</div>
 					<div style={{ marginBottom: "20px" }}>
 						<button type="submit" className="btn btn-light">
-							Registrarse
+							Crear nuevo post
 						</button>
-					</div>
-
-					<div className="footer_login">
-						¿Ya tienes cuenta?
-						<Link to={"/login"} style={{ color: "white", paddingLeft: "2px" }}>
-							{""}
-							Inicia sesión
-						</Link>
 					</div>
 				</div>
 
-				{authentication ? <Redirect to="/login" /> : null}
+				{authentication ? <Redirect to="/perfil" /> : null}
 			</form>
 		</div>
 	);

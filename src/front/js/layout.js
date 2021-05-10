@@ -20,6 +20,7 @@ import { ResetPassword } from "./pages/resetpassword";
 import { Contacts } from "./component/Contacts";
 import { SocialFeed } from "./pages/socialFeed";
 import { SocialComment } from "./pages/socialComments";
+import { NewPost } from "./component/newpost";
 
 //create your first component
 const Layout = () => {
@@ -56,6 +57,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/social">
 							<SocialPage />
+						</Route>
+						<Route exact path="/newpost">
+							<NewPost />
 						</Route>
 						<Route exact path="/socialFeed/:stateId">
 							<SocialFeed />
