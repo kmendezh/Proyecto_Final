@@ -134,6 +134,26 @@ def ratePost(id):
     
     return jsonify('Se actualizo la puntuacion'), 200
 
+# Obtener Post del usuario registrado
+@api.route('/getPostbyUserId', methods=['GET'])
+@jwt_required()
+def getPostbyUserId():
+
+    # Obtener el ID del usuario registrado get_jwt_identity
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+
+    if user is None:
+        raise APIException('Usuario no registrado', status_code=420)
+
+    # Obtener todos los votos del post
+    posts = Post.query.filter_by(iduser=user.id)
+
+    # Se mapean los resultados
+    all_posts = list(map(lambda x: x.serialize(), posts))
+
+    return jsonify(all_posts), 200
+
 
 ####################################################################
 # Ruta de prueba para ver los usuarios registrados

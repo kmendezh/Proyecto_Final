@@ -7,7 +7,7 @@ import validator from "validator";
 //comando
 // npm install validator
 
-const urlAPI = "https://3001-cyan-butterfly-oxdmgid0.ws-us03.gitpod.io/api/register";
+const urlAPI = "https://3001-black-falcon-qffd29ut.ws-us03.gitpod.io/api/register";
 
 export const RegisterPage = () => {
 	// Get Store

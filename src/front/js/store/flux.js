@@ -68,9 +68,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			postById: {},
 
-			credentials: {}
+			credentials: {},
+
+			postByUser: []
 		},
 		actions: {
+			// Get Post by User ID
+			getPostByUserId: async () => {
+				//get the store
+				const store = getStore();
+				let tmpArray = store.postByUser;
+
+				// Fetch
+				let urlAPI = "https://3001-black-falcon-qffd29ut.ws-us03.gitpod.io/api/getPostbyUserId";
+				let myHeaders = new Headers();
+				let aut = "Bearer " + sessionStorage.getItem("token");
+				myHeaders.append("Authorization", aut);
+
+				let requestOptions = {
+					method: "GET",
+					headers: myHeaders,
+					redirect: "follow"
+				};
+
+				await fetch(urlAPI, requestOptions)
+					.then(response => response.json())
+					.then(result => {
+						tmpArray = result;
+					})
+					.catch(error => console.log("error", error));
+
+				//reset the global store
+				setStore({ postByUser: tmpArray });
+			},
+
 			// Get the credentials of the user registered
 			getCredentials: async () => {
 				//get the store
@@ -78,7 +109,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let tmpObj = store.credentials;
 				let auth = "Bearer " + sessionStorage.getItem("token");
 				console.log("Token:", auth);
-				const urlAPI = "https://3001-cyan-butterfly-oxdmgid0.ws-us03.gitpod.io/api/getCredentials";
+				const urlAPI = "https://3001-black-falcon-qffd29ut.ws-us03.gitpod.io/api/getCredentials";
 
 				let myHeaders = new Headers();
 				myHeaders.append("Authorization", auth);
