@@ -328,60 +328,74 @@ export const Hoteles = () => {
 				</div>
 				<div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-1 pt-2">
 					<CardHotel
-						link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmV4SyZpjhYeEV05a8kZFyVZ-UP9tcYlREdw&usqp=CAU"
-						title="Hotel DoubleTree by Hilton"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://www.atrapalo.com/hoteles/picture/l/1746/6/5/376864047.jpg"
+						title="Hotel Best Western"
+						descripcion="Best Western Camino a Tamarindo es una pequeña propiedad ubicada en la provincia de Guanacaste, rodeada por la belleza natural de Costa Rica. Su atención personalizada, funcionales instalaciones y amenidades de cortesí"
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={35}
 					/>
 					<CardHotel
-						link="https://cf.bstatic.com/images/hotel/max1024x768/254/254480509.jpg"
-						title="Croc's Resort & Casino"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/51168180.jpg?k=3c1e081a7bf33b62b6708d1e038e6154df1ae4372e41a2f9dab8f808c3893c55&o="
+						title="Hotel Bosque del Mar"
+						descripcion="En Bosque del Mar estamos comprometidos con usted para hacer de estas las mejores vacaciones. ¡Tome nota!"
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={35}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://media-cdn.tripadvisor.com/media/oyster/730/0a/59/6b/86/quiet-pool--v10174012.jpg"
+						title="Hotel Casa Conde"
+						descripcion=" Este Resort cuenta con dos piscinas, dos jacuzzis, dos bares húmedos, un Sports Bar, dos restaurantes, servicios de spa"
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={35}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://exp.cdn-hotels.com/hotels/13000000/12540000/12534600/12534581/34a248db_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium"
+						title="Condovac La Costa"
+						descripcion="Condovac la Costa tiene habitaciones con modalidad todo incluido. Estas tarifas son más altas porque la comida y las bebidas que se consumen en el establecimiento están incluidas "
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://www.hiltonhotels.com/assets/img/Hotel%20Images/Hilton%20Garden%20Inn/S/SJOLAGI/SJOLAGI_gallery_poolout2.jpg"
+						title="Hilton Garden Inn"
+						descripcion="Hilton Garden Inn Liberia Airport es un lugar excelente para comenzar y terminar sus vacaciones o su viaje de negocios en Costa Rica. "
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://media-cdn.tripadvisor.com/media/photo-w/15/76/c5/ae/photo2jpg.jpg"
+						title="Hotel Restaurant Las Espuelas"
+						descripcion="Vea por qué tantos viajeros hacen de Las Espuelas Hotel su elección al visitar Liberia."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://www.tamarindodiria.com/wp-content/uploads/opt-ADULTS-ONLY-AREA.jpg"
+						title="Hotel Tamarindo Diria"
+						descripcion="El alojamiento perfecto para familias y parejas que buscan un ambiente sereno y relajado con vista a la playa"
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 				</div>
 			</div>
@@ -391,60 +405,74 @@ export const Hoteles = () => {
 				</div>
 				<div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-1 pt-2">
 					<CardHotel
-						link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmV4SyZpjhYeEV05a8kZFyVZ-UP9tcYlREdw&usqp=CAU"
-						title="Hotel DoubleTree by Hilton"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/85272421.jpg?k=f142f905bc1bb9645e8e8b4f966ab96add571a8720e47f903f7ac4a7a50664f1&o="
+						title="Aldea La Casa De Los Mariscos"
+						descripcion="La Aldea Casa de los Mariscos cuenta con WiFi gratuita y aparcamiento privado gratuito y se encuentra en Puntarenas, a 46 km de Jacó."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 					<CardHotel
-						link="https://cf.bstatic.com/images/hotel/max1024x768/254/254480509.jpg"
-						title="Croc's Resort & Casino"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/232316886.jpg?k=b999857827831301fbf3fe0ef40422c35bea93442ac6452723a57e4e616ff111&o="
+						title="Castillo Resort"
+						descripcion="Este establecimiento informa que actualmente aplica medidas de limpieza adicional y seguridad de los huéspedes."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://cdn.galaxy.tf/thumb/sizeW372/unit-media/tc-default/uploads/images/room_photo/001/619/040/piscina-condo-standard.jpg"
+						title="Hotel Puerto Azul Boutique"
+						descripcion="Una decoración náutica relajante, muebles elegantes y modernos y vistas al océano o a los manglares se unen para crear un oasis relajante en Puntarenas"
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://exp.cdn-hotels.com/hotels/18000000/17770000/17763500/17763483/b78107c5_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium"
+						title="Hotel Las Brisas"
+						descripcion="Hotel de 3 estrellas en Puntarenas con piscina al aire libre y restaurante"
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={35}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://cf.bstatic.com/images/hotel/max1024x768/229/229643545.jpg?hp=1"
+						title="Hotel Restaurant Puntarenas Backpackers"
+						descripcion="El Puntarenas Backpackers se encuentra en Puntarenas, a 90 metros de la playa, y cuenta con restaurante, aparcamiento privado gratuito y bar"
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={35}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://secureservercdn.net/192.169.222.215/ukb.a7a.myftpupload.com/wp-content/uploads/2020/07/our-suites-video_new.jpg"
+						title="Vida Mountain Resort"
+						descripcion="Con un patio delantero con impresionantes vistas del océano Pacífico y las montañas circundantes, cada dormitorio individual es ideal para cualquier pareja o viajero solitario que le encanta estar cerca de las comodidades del complejo"
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://www.vistalasislas.com/wp-content/uploads/2016/11/VLI_economy_room01-1024x683.jpg"
+						title="Hotel Vista Las Islas"
+						descripcion="Nuestras acogedoras habitaciones familiares estándar están situadas justo en frente del bosque tropical y la vegetación exuberante"
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 				</div>
 			</div>
@@ -454,60 +482,74 @@ export const Hoteles = () => {
 				</div>
 				<div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-1 pt-2">
 					<CardHotel
-						link="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmV4SyZpjhYeEV05a8kZFyVZ-UP9tcYlREdw&usqp=CAU"
-						title="Hotel DoubleTree by Hilton"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://cf.bstatic.com/images/hotel/max1024x768/158/158937524.jpg"
+						title="Hotel Boutique La Casa De Las Flores"
+						descripcion="El Hotel La Casa de las Flores se encuentra en Cahuita, a solo 230 metros de la terminal de autobuses y del centro comercial. Ofrece un desayuno continental gratuito y conexión Wi-Fi gratuita."
 						descuento1={5}
+						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
+					/>
+					<CardHotel
+						link="https://exp.cdn-hotels.com/hotels/4000000/3090000/3088100/3088090/8c63e587_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium"
+						title="Cariblue Beach"
+						descripcion="En Sole Luna, restaurante informal con vista a la piscina, se sirven desayunos, almuerzos y cenas. Los huéspedes pueden disfrutar de bebidas en el bar"
+						descuento1={5}
+						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
+					/>
+					<CardHotel
+						link="https://cf.bstatic.com/images/hotel/max1024x768/288/288329400.jpg"
+						title="Hotel Colina Secreta"
+						descripcion="El Colina Secreta se encuentra en Puerto Viejo, a 2,8 km de la playa Chiquita, y ofrece alojamiento con salón compartido, aparcamiento privado gratuito, jardín y terraza"
+						descuento1={5}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 						descuento2={30}
 					/>
 					<CardHotel
-						link="https://cf.bstatic.com/images/hotel/max1024x768/254/254480509.jpg"
-						title="Croc's Resort & Casino"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://cf.bstatic.com/images/hotel/max1024x768/196/196024858.jpg"
+						title="Ecolirios Boutique"
+						descripcion="Este lugar es maravilloso. Tiene un estética que promueve una experiencia única con la naturaleza con el entorno y con uno mismo."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={40}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://cf.bstatic.com/images/hotel/max1024x768/264/264388593.jpg"
+						title="La Kukula Lodge"
+						descripcion="La Kukula Lodge se encuentra en Puerto Viejo, a solo 200 metros de la playa Chiquita. Ofrece conexión Wi-Fi gratuita y piscina al aire libre."
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://cf.bstatic.com/images/hotel/max1024x768/295/295725208.jpg"
+						title="Hotel Ocean View Lodge"
+						descripcion="El Ocean View Lodge está situado en Cahuita, a 800 metros de Negra, y ofrece alojamiento con WiFi gratuita y aparcamiento privado gratuito. Ofrece habitaciones familiares y terraza. "
 						descuento1={5}
 						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
+						link="https://cf.bstatic.com/images/hotel/max1024x768/181/181941682.jpg"
+						title="Hotel Sunshine Caribe"
+						descripcion="Las habitaciones del Sunshine Caribe gozan de vistas al jardín e incluyen zona de estar, escritorio y baño privado con ducha y artículos de aseo gratuitos."
 						descuento1={5}
 						descuento2={30}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento1={5}
-						descuento2={30}
-					/>
-					<CardHotel
-						link="https://www.anywhere.com/img-a/hotel/arenas-del-mar-nature-resort-manuel-antonio-costa-rica/Arenas-del-Mar-A-5-jpg"
-						title="Arenas del Mar"
-						descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet mauris ex, ut rutrum urna
-					pulvinar in. Nunc convallis at turpis in convallis. Morbi molestie euismod odio non pretium. Fusce."
-						descuento1={5}
-						descuento2={30}
+						desprecio="de habitación por noche "
+						simbolo="$"
+						moneda={45}
 					/>
 				</div>
 			</div>
