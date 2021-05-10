@@ -12,6 +12,7 @@ export function Perfil() {
 
 	useEffect(() => {
 		actions.getCredentials();
+		actions.getPostByUserId();
 		console.log("Credentials", store.credentials);
 	}, []);
 
@@ -40,7 +41,7 @@ export function Perfil() {
 							<i className="fas fa-envelope"></i> {store.credentials.email}
 						</h4>
 						<h4>
-							<i className="fas fa-map-marked"></i> Publicaciones:9
+							<i className="fas fa-map-marked"></i> Publicaciones: {store.postByUser.length}
 						</h4>
 						<h4>
 							<i className="fas fa-sign-out-alt"></i> Log out
