@@ -2,10 +2,11 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
+import validator from "validator";
 
 // const urlAPILogin = "https://proyecto-tours.herokuapp.com/api/login";
 
-const urlAPILogin = "https://3001-pink-partridge-n6ye7bey.ws-us04.gitpod.io/api/login";
+const urlAPILogin = "https://3001-silver-spider-kikqr32d.ws-us04.gitpod.io/api/login";
 export const LoginPage = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
@@ -19,35 +20,43 @@ export const LoginPage = () => {
 	const handleSubmit = async e => {
 		e.preventDefault();
 
-		let myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
+		if (!validator.isEmail(email)) {
+			setErrorWindow(true);
+			setErrorMsg("Formato de correo invalido");
+		} else if (password === "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese su contraseña");
+		} else {
+			let myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
 
-		let raw = JSON.stringify({
-			email: email,
-			password: password
-		});
+			let raw = JSON.stringify({
+				email: email,
+				password: password
+			});
 
-		let requestOptions = {
-			method: "POST",
-			headers: myHeaders,
-			body: raw,
-			redirect: "follow"
-		};
+			let requestOptions = {
+				method: "POST",
+				headers: myHeaders,
+				body: raw,
+				redirect: "follow"
+			};
 
-		await fetch(urlAPILogin, requestOptions)
-			.then(response => response.text())
-			.then(result => {
-				result = JSON.parse(result);
-				if (result.token != undefined) {
-					sessionStorage.setItem("token", result.token);
-					console.log("Token guardado");
-					setAuth(true);
-				} else {
-					setErrorWindow(true);
-					setErrorMsg("Correo y/o contraseña inválidos");
-				}
-			})
-			.catch(error => console.log("error", error));
+			await fetch(urlAPILogin, requestOptions)
+				.then(response => response.text())
+				.then(result => {
+					result = JSON.parse(result);
+					if (result.token != undefined) {
+						sessionStorage.setItem("token", result.token);
+						console.log("Token guardado");
+						setAuth(true);
+					} else {
+						setErrorWindow(true);
+						setErrorMsg("Correo y/o contraseña inválidos");
+					}
+				})
+				.catch(error => console.log("error", error));
+		}
 	};
 
 	const closeWindow = () => {
