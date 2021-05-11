@@ -6,7 +6,7 @@ export const Footer = () => {
 	return (
 		<div className="footerContainer">
 			<div className="footerTitleContainer">
-				<h1 className="footerTitle"> Title </h1>
+				<h1 className="footerTitle"> Paraiso Natural </h1>
 			</div>
 			<div className="iconContainer">
 				<div>

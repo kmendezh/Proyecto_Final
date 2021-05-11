@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
+import LogoParaiso from "/workspace/Proyecto_Final/src/front/img/logo_paraiso.png";
 
 export const Navbar = () => {
 	return (
 		<div className="navBox">
+			<div className="w-100">
+				<Link to="/" className="navbar-brand">
+					<img src={LogoParaiso} />
+				</Link>
+			</div>
 			<div>
 				<Link to={"/"} className="navItem">
 					Inicio <i className="fas fa-map-marked" style={{ fontSize: "20px" }} />{" "}
