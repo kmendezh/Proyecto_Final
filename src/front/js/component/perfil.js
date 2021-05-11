@@ -5,6 +5,7 @@ import "../../styles/perfil.css";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useContext, useState, useEffect } from "react";
+import { TourCard } from "../component/tourCard";
 
 export function Perfil() {
 	// Get Store
@@ -15,6 +16,8 @@ export function Perfil() {
 		actions.getPostByUserId();
 		console.log("Credentials", store.credentials);
 	}, []);
+
+	let Postbyuserid = store.postByUser.map((element, index) => <TourCard key={element.id} cardInfo={element} />);
 
 	return (
 		<div className="container-fluid perfilview">
@@ -57,7 +60,9 @@ export function Perfil() {
 								height="300px"
 								rounded
 							/>
-							<h1 className="text-center text-white ">Nombre</h1>
+							<h1 className="text-center text-white ">
+								<strong>{store.credentials.username}</strong>
+							</h1>
 						</div>
 						<div className="fotoportada">
 							<img src="https://i0.wp.com/www.diversidadyunpocodetodo.com/wp-content/uploads/2017/07/286-01-Tucan-pechigualdo-Costa-Rica-7243.jpg?ssl=1" />
@@ -70,17 +75,7 @@ export function Perfil() {
 								crear nuevo post
 							</Link>
 						</div>
-						<div className="arraydefotos">
-							<div className="col-2 m-1 p-0">
-								<img className="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap" />
-								<div className="card-body">
-									<h4 className="card-title">Card title</h4>
-									<p className="card-text">
-										Some quick example text to build on the card title and make up the bulk of the
-									</p>
-								</div>
-							</div>
-						</div>
+						<div style={{ display: "flex", flexDirection: "row", flexWrap: "noWrap" }}>{Postbyuserid}</div>
 					</div>
 				</div>
 			</div>
