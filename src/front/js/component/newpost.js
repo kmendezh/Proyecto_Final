@@ -138,15 +138,18 @@ export const NewPost = () => {
 							<span className="input-group-text" id="inputGroup-sizing-lg">
 								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
 							</span>
-						</div>
-						<input
-							onChange={e => setProvincia(e.target.value)}
-							type="password"
-							className="form-control"
-							aria-label="Large"
-							aria-describedby="inputGroup-sizing-sm"
-							placeholder="provincia"
-						/>
+						</div>{" "}
+						<select id="Provincia" name="Provincia" onChange={e => setProvincia(e.target.value)}>
+							<option value="Alajuela">Alajuela</option>
+							<option value="San Jose">San Jose</option>
+							<option value="Cartago" selected>
+								Cartago
+							</option>
+							<option value="Heredia">Heredia</option>
+							<option value="Puntarenas">Puntarenas</option>
+							<option value="Guanacaste">Guanacaste</option>
+							<option value="Limon">Limon</option>
+						</select>
 					</div>
 					<div className="input-group input-group-lg userInput">
 						<div className="input-group-prepend">
@@ -154,14 +157,13 @@ export const NewPost = () => {
 								<i style={{ color: "black", fontSize: "18px" }} className="fas fa-paw" />
 							</span>
 						</div>
-						<input
-							onChange={e => setDificultad(e.target.value)}
-							type="text"
-							className="form-control"
-							aria-label="Large"
-							aria-describedby="inputGroup-sizing-sm"
-							placeholder="dificultad"
-						/>
+						<select id="Dificultad" name="Dificultad" onChange={e => setDificultad(e.target.value)}>
+							<option value="Baja">Baja</option>
+							<option value="Media"> Media</option>
+							<option value="Alta" selected>
+								Alta
+							</option>
+						</select>
 					</div>
 
 					<div className="input-group input-group-lg userInput">
