@@ -1,14 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 
 // const urlAPILogin = "https://proyecto-tours.herokuapp.com/api/login";
 
-const urlAPILogin = "https://3001-black-falcon-qffd29ut.ws-us03.gitpod.io/api/login";
+const urlAPILogin = "https://3001-pink-partridge-n6ye7bey.ws-us04.gitpod.io/api/login";
 export const LoginPage = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
+
+	useEffect(() => {
+		if (sessionStorage.getItem("token") != null) {
+			setAuth(true);
+		}
+	}, []);
 
 	const handleSubmit = async e => {
 		e.preventDefault();

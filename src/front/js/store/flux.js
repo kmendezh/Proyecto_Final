@@ -80,7 +80,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let tmpArray = store.postByUser;
 
 				// Fetch
-				let urlAPI = "https://3001-black-falcon-qffd29ut.ws-us03.gitpod.io/api/getPostbyUserId";
+				let urlAPI = "https://3001-pink-partridge-n6ye7bey.ws-us04.gitpod.io/api/getPostbyUserId";
 				let myHeaders = new Headers();
 				let aut = "Bearer " + sessionStorage.getItem("token");
 				myHeaders.append("Authorization", aut);
@@ -109,7 +109,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let tmpObj = store.credentials;
 				let auth = "Bearer " + sessionStorage.getItem("token");
 				console.log("Token:", auth);
-				const urlAPI = "https://3001-black-falcon-qffd29ut.ws-us03.gitpod.io/api/getCredentials";
+				const urlAPI = "https://3001-pink-partridge-n6ye7bey.ws-us04.gitpod.io/api/getCredentials";
 
 				let myHeaders = new Headers();
 				myHeaders.append("Authorization", auth);
@@ -139,7 +139,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let tmpObj = store.postById;
 
 				// URL API
-				const urlAPI = "https://3001-cyan-butterfly-oxdmgid0.ws-us03.gitpod.io/api/getPostById/";
+				const urlAPI = "https://3001-pink-partridge-n6ye7bey.ws-us04.gitpod.io/api/getPostById/";
 				let tmpUrl = urlAPI + id.toString();
 
 				let requestOptions = {
@@ -181,7 +181,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					redirect: "follow"
 				};
 
-				await fetch("https://3001-cyan-butterfly-oxdmgid0.ws-us03.gitpod.io/api/getPost", requestOptions)
+				await fetch("https://3001-pink-partridge-n6ye7bey.ws-us04.gitpod.io/api/getPost", requestOptions)
 					.then(response => response.json())
 					.then(result => {
 						tmpArray = result;
