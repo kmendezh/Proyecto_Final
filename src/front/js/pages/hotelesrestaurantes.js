@@ -447,7 +447,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://cf.bstatic.com/images/hotel/max1024x768/229/229643545.jpg?hp=1"
 						title="Hotel Restaurant Puntarenas Backpackers"
-						descripcion="El Puntarenas Backpackers se encuentra en Puntarenas, a 90 metros de la playa, y cuenta con restaurante, aparcamiento privado gratuito y bar"
+						descripcion="El Puntarenas Backpackers se encuentra en Puntarenas, a 90 metros de la playa, y cuenta con restaurante."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
@@ -457,7 +457,7 @@ export const Hoteles = () => {
 					<CardHotel
 						link="https://secureservercdn.net/192.169.222.215/ukb.a7a.myftpupload.com/wp-content/uploads/2020/07/our-suites-video_new.jpg"
 						title="Vida Mountain Resort"
-						descripcion="Con un patio delantero con impresionantes vistas del océano Pacífico y las montañas circundantes, cada dormitorio individual es ideal para cualquier pareja o viajero solitario que le encanta estar cerca de las comodidades del complejo"
+						descripcion="Con un patio delantero con impresionantes vistas del océano Pacífico y las montañas circundantes, cada dormitorio individual es ideal para cualquier pareja."
 						descuento1={5}
 						descuento2={30}
 						desprecio="de habitación por noche "
