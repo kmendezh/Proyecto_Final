@@ -6,9 +6,9 @@ import LogoParaiso from "/workspace/Proyecto_Final/src/front/img/logo_paraiso.pn
 export const Navbar = () => {
 	return (
 		<div className="navBox">
-			<div className="w-100">
-				<Link to="/" className="navbar-brand">
-					<img src={LogoParaiso} />
+			<div className="flex-item">
+				<Link to="/">
+					<img src={LogoParaiso} className="logo" />
 				</Link>
 			</div>
 			<div>
