@@ -158,10 +158,10 @@ export const NewPost = () => {
 							</span>
 						</div>
 						<select id="Dificultad" name="Dificultad" onChange={e => setDificultad(e.target.value)}>
-							<option value="Baja">Baja</option>
-							<option value="Media"> Media</option>
+							<option value="Baja">Dificultad-Baja</option>
+							<option value="Media"> Dificultad-Media</option>
 							<option value="Alta" selected>
-								Alta
+								Dificultad-Alta
 							</option>
 						</select>
 					</div>

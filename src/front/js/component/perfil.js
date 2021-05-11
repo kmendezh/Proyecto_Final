@@ -35,7 +35,7 @@ export function Perfil() {
 						</h3>
 					</div>
 					<div>
-						<h4>Datos personal</h4>
+						<h4>Datos personales</h4>
 						<h4>
 							<i className="fas fa-user"></i> {store.credentials.username}
 						</h4>
@@ -72,7 +72,10 @@ export function Perfil() {
 						<div className="nuevopost d-flex justify-content-center">
 							<Link to={"/newpost"} style={{ color: "white", paddingLeft: "2px" }}>
 								{""}
-								crear nuevo post
+								<h3>
+									<i className="fas fa-map-marked" style={{ fontSize: "30px" }} />
+									Nuevo Post
+								</h3>{" "}
 							</Link>
 						</div>
 						<div style={{ display: "flex", flexDirection: "row", flexWrap: "noWrap" }}>{Postbyuserid}</div>
