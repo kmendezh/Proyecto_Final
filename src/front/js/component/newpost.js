@@ -7,7 +7,7 @@ import validator from "validator";
 //comando
 // npm install validator
 
-const urlAPI = "https://3001-cyan-butterfly-oxdmgid0.ws-us03.gitpod.io/api/addNewPost";
+const urlAPI = "https://3001-blush-skunk-pid50gla.ws-us04.gitpod.io/api/addNewPost";
 
 export const NewPost = () => {
 	// Get Store
@@ -28,18 +28,23 @@ export const NewPost = () => {
 		} else if (dificultad == "") {
 			setErrorWindow(true);
 			setErrorMsg("Por favor ingrese la dificultad");
+		} else if (duracion == "") {
+			setErrorWindow(true);
+			setErrorMsg("Por favor ingrese la duracion");
 		} else {
+			// Se envia el nuevo Post
 			let myHeaders = new Headers();
+			let token = "Bearer " + sessionStorage.getItem("token");
+			myHeaders.append("Authorization", token);
 			myHeaders.append("Content-Type", "application/json");
 
 			let raw = JSON.stringify({
 				title: title,
+				comment: comment,
 				url: url,
 				provincia: provincia,
-				is_active: true,
 				dificultad: dificultad,
-				duracion: duracion,
-				comment: comment
+				duracion: duracion
 			});
 
 			let requestOptions = {
@@ -51,7 +56,7 @@ export const NewPost = () => {
 
 			let response = await fetch(urlAPI, requestOptions);
 			if (response.status != 200) {
-				console.log("post no creado", response);
+				console.log("Post no creado", response);
 				setErrorWindow(true);
 				if (response.status == 400) {
 					setErrorMsg("Request Body inválido. Uno o más parámetros están vacíos");
