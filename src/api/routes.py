@@ -299,6 +299,9 @@ def create_token():
     # Se obtienen los credenciales del usuario solicitado
     user = User.query.filter_by(email=email).first()
     # Si el password encriptado no coincide con el password ingresado, no se acepta
+    if user is None:
+        return jsonify({"msg": "No existe el usuario"}), 400
+  
     result = check_password_hash(user.password,password)
     
     if result is False:
