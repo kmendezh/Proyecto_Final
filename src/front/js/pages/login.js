@@ -4,9 +4,7 @@ import { Link, useParams, Redirect } from "react-router-dom";
 import "../../styles/login.css";
 import validator from "validator";
 
-// const urlAPILogin = "https://proyecto-tours.herokuapp.com/api/login";
-
-const urlAPILogin = "https://3001-silver-spider-kikqr32d.ws-us04.gitpod.io/api/login";
+const urlAPILogin = "https://3001-blush-skunk-pid50gla.ws-us04.gitpod.io/api/login";
 export const LoginPage = () => {
 	// Get Store
 	const { store, actions } = useContext(Context);
